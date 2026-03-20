@@ -1,0 +1,21 @@
+/* Dark Mode Theme Variables */
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --surface-hover: #334155;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #64748b;
+  
+  --primary-color: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-light: rgba(59, 130, 246, 0.2);
+  
+  --border-color: #334155;
+}
+
+/* Dark mode specific adjustments for images/icons if needed */
+[data-theme="dark"] img {
+  opacity: 0.9;
+}
