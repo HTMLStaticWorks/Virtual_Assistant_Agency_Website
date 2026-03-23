@@ -3,11 +3,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
 
+  const hamburgerIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>`;
+  const closeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+
+  function openMenu() {
+    navLinks.classList.add('active');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    mobileMenuBtn.innerHTML = closeIcon;
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove('active');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    mobileMenuBtn.innerHTML = hamburgerIcon;
+  }
+
   if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const expanded = navLinks.classList.contains('active');
-      mobileMenuBtn.setAttribute('aria-expanded', expanded);
+    // Toggle on hamburger click
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    // Close when any nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => closeMenu());
+    });
+
+    // Close when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMenu();
+      }
     });
   }
 

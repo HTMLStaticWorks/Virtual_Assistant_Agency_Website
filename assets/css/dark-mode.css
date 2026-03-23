@@ -19,3 +19,7 @@
 [data-theme="dark"] img {
   opacity: 0.9;
 }
+/* Fix for hero subtitle transparency in dark mode (Home 2) */
+[data-theme="dark"] .hero-subtitle {
+  color: #ffffff !important;
+}

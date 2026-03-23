@@ -147,6 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (descEl) descEl.textContent = data.description;
         if (btnEl) btnEl.textContent = data.buttonText;
 
+        const featuresTitle = document.getElementById('features-title');
+        if (featuresTitle) {
+            featuresTitle.textContent = `What our ${data.title.toLowerCase()} specialists do best:`;
+        }
+
         // Update Features Grid
         const featuresGrid = document.getElementById('features-grid');
         if (featuresGrid) {
@@ -158,15 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('');
         }
 
-        // Update How It Works List
+        // Update How It Works Grid
         const howItWorksList = document.getElementById('how-it-works-list');
         if (howItWorksList) {
             howItWorksList.innerHTML = data.howItWorks.map((step, index) => `
-                <div class="flex gap-4 items-start">
-                    <div style="width: 32px; height: 32px; flex-shrink: 0; background: var(--primary-light); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem;">
+                <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; padding: 1.5rem;">
+                    <div style="width: 40px; height: 40px; flex-shrink: 0; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 12px var(--primary-light);">
                         ${index + 1}
                     </div>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0; padding-top: 4px;">${step}</p>
+                    <p style="color: var(--text-primary); line-height: 1.6; margin: 0; font-size: 0.95rem; font-weight: 500;">${step}</p>
                 </div>
             `).join('');
         }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin & Scheduling - Virtual Assistant Agency</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/footer.css">
@@ -12,7 +13,15 @@
 <body>
     <header class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo">Virtual Assistant Agency</a>
+            <a href="index.html" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                </svg>
+                Virtual Assistant Agency
+            </a>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="home-2.html">Home 2</a>
@@ -27,40 +36,45 @@
                 <a href="signup.html" class="btn btn-primary">Hire a VA</a>
             </nav>
             <div class="flex items-center gap-2">
-                <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border: none;">...</button>
-                <button class="mobile-menu-btn">...</button>
+                <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
             </div>
         </div>
     </header>
 
-    <main>
-        <section id="service-hero" class="section" style="background-color: var(--surface-color); border-bottom: 1px solid var(--border-color); color: white;">
+    <main id="service-details-content">
+        <section id="service-hero" class="section" style="background-color: var(--surface-color); border-bottom: 1px solid var(--border-color); color: white; padding: 10rem 0 8rem; min-height: 50vh; display: flex; align-items: center;">
             <div class="container">
                 <a href="services.html" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; display: inline-block; margin-bottom: 16px;">&larr; Back to Services</a>
-                <h1 id="service-heading" style="margin-bottom: 16px; color: white;">Service Details</h1>
-                <p id="service-description" style="font-size: 1.125rem; max-width: 600px;">Reclaim your time by offloading your inbox, calendar, and daily administrative friction to a dedicated professional.</p>
-                <div style="margin-top: 24px;">
-                    <a href="signup.html" id="service-btn" class="btn btn-primary">Hire an Admin VA</a>
+                <h1 id="service-heading" style="margin-bottom: 16px; color: white; font-size: clamp(2.5rem, 6vw, 4rem);">Service Details</h1>
+                <p id="service-description" style="font-size: 1.25rem; max-width: 700px; color: white; line-height: 1.6;">Reclaim your time by offloading your inbox, calendar, and daily administrative friction to a dedicated professional.</p>
+                <div style="margin-top: 32px;">
+                    <a href="signup.html" id="service-btn" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Hire an Admin VA</a>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <div class="container grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h2 id="features-title">What our admin assistants do best:</h2>
-                    <ul id="features-list" style="margin-top: 24px;">
-                        <!-- Features will be loaded here -->
-                    </ul>
+            <div class="container">
+                <h2 id="features-title" style="text-align: center; margin-bottom: 48px; font-size: 2.25rem;">What our admin assistants do best:</h2>
+                <div id="features-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Features will be loaded here by JS -->
                 </div>
-                <div class="card" style="background-color: var(--bg-color);">
-                    <h3>How it works via Dashboard</h3>
-                    <p>Once you sign up, you'll get access to the Virtual Assistant Agency Client Dashboard. From there, you can:</p>
-                    <div style="background-color: var(--surface-hover); padding: 16px; border-radius: var(--radius-sm); margin-top: 16px;">
-                        <ol id="steps-list" style="margin-left: 16px;">
-                            <!-- Steps will be loaded here -->
-                        </ol>
-                    </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--surface-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 48px;">
+                    <h2 style="margin-bottom: 16px;">How it works via Dashboard</h2>
+                    <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Once you sign up, you'll get access to the Virtual Assistant Agency Client Dashboard. From there, you can:</p>
+                </div>
+                <div id="how-it-works-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Steps will be loaded here by JS -->
                 </div>
             </div>
         </section>
