@@ -1,27 +1,117 @@
 document.addEventListener("DOMContentLoaded", function () {
     const footerPlaceholder = document.getElementById("footer-placeholder");
-    if (footerPlaceholder) {
-        fetch(`footer.html?v=${new Date().getTime()}`)
-            .then(response => {
-                if (!response.ok) throw new Error("Failed to load footer");
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-                
-                // Newsletter form logic
-                const newsletterForm = footerPlaceholder.querySelector('form');
-                if (newsletterForm) {
-                    newsletterForm.addEventListener('submit', (e) => {
-                        e.preventDefault();
-                        const emailInput = newsletterForm.querySelector('input[type="email"]');
-                        if (emailInput) {
-                            alert(`Thanks for subscribing with: ${emailInput.value}`);
-                            newsletterForm.reset();
-                        }
-                    });
-                }
-            })
-            .catch(error => console.error("Error loading footer:", error));
+    if (!footerPlaceholder) return;
+
+    const footerHTML = `
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-col">
+                <a href="index.html" class="footer-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                    <span class="logo-text">Virtual Assistant Agency</span>
+                </a>
+                <p class="footer-desc">
+                    Premium virtual assistant services for the modern entrepreneur. We believe in quality, efficiency, and excellence.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4 class="col-title">Quick Links</h4>
+                <ul class="col-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing Plan</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-col">
+                <h4 class="col-title">Services</h4>
+                <ul class="col-links">
+                    <li><a href="services.html">Admin Support</a></li>
+                    <li><a href="services.html">Social Media</a></li>
+                    <li><a href="services.html">Customer Support</a></li>
+                    <li><a href="services.html">Data Entry</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-col">
+                <h4 class="col-title">Newsletter</h4>
+                <p class="newsletter-desc">Get the latest scaling tips and exclusive offers.</p>
+                <form class="pill-newsletter">
+                    <input type="email" placeholder="Email address" required>
+                    <button type="submit">Join</button>
+                </form>
+                <div class="social-links-reference">
+                    <a href="#" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-reference">
+            <p>&copy; 2026 Virtual Assistant Agency All rights reserved.</p>
+        </div>
+    </div>
+    
+    <!-- Scroll to Top -->
+    <button id="scrollToTop" class="scroll-top-btn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+</footer>
+    `;
+
+    footerPlaceholder.innerHTML = footerHTML;
+
+    // Newsletter form logic
+    const newsletterForm = footerPlaceholder.querySelector('.pill-newsletter');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            if (emailInput) {
+                alert(`Thanks for subscribing with: ${emailInput.value}`);
+                newsletterForm.reset();
+            }
+        });
+    }
+
+    // Scroll to Top logic
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = "flex";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 });

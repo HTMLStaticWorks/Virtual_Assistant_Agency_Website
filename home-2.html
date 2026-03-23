@@ -9,6 +9,7 @@
         content="Scale your business by outsourcing tasks to our premium, managed virtual assistants.">
 
     <!-- Fonts -->
+        <link rel="icon" type="image/png" href="assets/images/home1_page_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -180,7 +181,558 @@
                     <a href="about.html" class="btn btn-secondary">Learn About Our Training</a>
                 </div>
             </div>
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- Stats Banner -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section style="background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%); padding: 4rem 0;">
+            <div class="container">
+                <style>
+                    .stats-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 2rem;
+                        text-align: center;
+                    }
+                    @media (min-width: 768px) {
+                        .stats-grid {
+                            grid-template-columns: repeat(4, 1fr);
+                        }
+                    }
+                    .stat-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 0.4rem;
+                    }
+                    .stat-number {
+                        font-size: clamp(2rem, 5vw, 3rem);
+                        font-weight: 800;
+                        color: #ffffff;
+                        line-height: 1;
+                    }
+                    .stat-label {
+                        font-size: 0.9rem;
+                        color: rgba(255,255,255,0.75);
+                        font-weight: 500;
+                        letter-spacing: 0.03em;
+                    }
+                </style>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Businesses Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Global Availability</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15hrs</span>
+                        <span class="stat-label">Avg. Time Saved / Week</span>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- Why We're Different — Split Layout with HD Image -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section">
+            <div class="container">
+                <style>
+                    .wwd-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 3rem;
+                        align-items: center;
+                    }
+                    @media (min-width: 1024px) {
+                        .wwd-grid {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+                    .wwd-img-wrap {
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+                        position: relative;
+                    }
+                    .wwd-img-wrap img {
+                        width: 100%;
+                        height: 420px;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    .wwd-badge-overlay {
+                        position: absolute;
+                        bottom: 1.5rem;
+                        left: 1.5rem;
+                        background: white;
+                        border-radius: 12px;
+                        padding: 1rem 1.25rem;
+                        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+                        display: flex;
+                        align-items: center;
+                        gap: 0.75rem;
+                    }
+                    .wwd-badge-icon {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: var(--primary-light);
+                        color: var(--primary-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                    }
+                    .wwd-badge-text strong {
+                        display: block;
+                        font-size: 0.95rem;
+                        font-weight: 700;
+                        color: #111827;
+                    }
+                    .wwd-badge-text span {
+                        font-size: 0.775rem;
+                        color: #6b7280;
+                    }
+                    .wwd-points {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.25rem;
+                    }
+                    .wwd-point {
+                        display: flex;
+                        gap: 1rem;
+                        align-items: flex-start;
+                    }
+                    .wwd-point-icon {
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 10px;
+                        background: var(--primary-light);
+                        color: var(--primary-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        margin-top: 2px;
+                    }
+                    .wwd-point-body h5 {
+                        margin: 0 0 0.25rem;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: var(--text-primary);
+                    }
+                    .wwd-point-body p {
+                        margin: 0;
+                        font-size: 0.875rem;
+                        color: var(--text-secondary);
+                        line-height: 1.6;
+                    }
+                </style>
+                <div class="wwd-grid">
+                    <!-- HD Image Left -->
+                    <div class="wwd-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=85"
+                            alt="Team collaboration">
+                        <div class="wwd-badge-overlay">
+                            <div class="wwd-badge-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </div>
+                            <div class="wwd-badge-text">
+                                <strong>Top 2% Talent Only</strong>
+                                <span>Rigorously vetted assistants</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Right -->
+                    <div>
+                        <span
+                            style="background: var(--primary-light); color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.775rem; padding: 0.4rem 0.9rem; border-radius: 999px; display: inline-block; margin-bottom: 1.25rem;">
+                            Why Choose Us
+                        </span>
+                        <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1rem; line-height: 1.25;">
+                            We're not a marketplace. <br>We're your growth partner.
+                        </h2>
+                        <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7;">
+                            Unlike freelance platforms, every VA at our agency is employed, trained, and managed by us.
+                            You get the output of a full-time hire without the overhead.
+                        </p>
+                        <ul class="wwd-points">
+                            <li class="wwd-point">
+                                <div class="wwd-point-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    </svg>
+                                </div>
+                                <div class="wwd-point-body">
+                                    <h5>No Hiring Risk</h5>
+                                    <p>If your VA isn't a fit, we replace them within 48 hours — no questions asked.</p>
+                                </div>
+                            </li>
+                            <li class="wwd-point">
+                                <div class="wwd-point-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                                        <line x1="3" y1="9" x2="21" y2="9" />
+                                        <line x1="9" y1="21" x2="9" y2="9" />
+                                    </svg>
+                                </div>
+                                <div class="wwd-point-body">
+                                    <h5>Full Transparency Dashboard</h5>
+                                    <p>Track hours, tasks, and performance in real-time through your client portal.</p>
+                                </div>
+                            </li>
+                            <li class="wwd-point">
+                                <div class="wwd-point-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                                    </svg>
+                                </div>
+                                <div class="wwd-point-body">
+                                    <h5>Instantly Scalable</h5>
+                                    <p>Add or reduce hours any month. Scale up for launches, scale down off-season.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div style="margin-top: 2rem;">
+                            <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- Industry Use Cases — 3 HD Image Cards -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section" style="background-color: var(--surface-color);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 56px;">
+                    <span
+                        style="background: var(--primary-light); color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.775rem; padding: 0.4rem 0.9rem; border-radius: 999px; display: inline-block; margin-bottom: 1.25rem;">
+                        Who We Help
+                    </span>
+                    <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1rem;">
+                        Built for every kind of ambitious business
+                    </h2>
+                    <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto; font-size: 1rem; line-height: 1.7;">
+                        From solo founders to enterprise teams, our VAs adapt to your industry and workflows.
+                    </p>
+                </div>
+
+                <style>
+                    .usecase-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 1.75rem;
+                        align-items: stretch;
+                    }
+                    @media (min-width: 768px) {
+                        .usecase-grid {
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                    .uc-card {
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+                        display: flex;
+                        flex-direction: column;
+                        background: var(--bg-color);
+                        border: 1px solid var(--border-color);
+                        transition: transform 0.25s ease, box-shadow 0.25s ease;
+                    }
+                    .uc-card:hover {
+                        transform: translateY(-6px);
+                        box-shadow: 0 16px 48px rgba(0,0,0,0.13);
+                    }
+                    .uc-card img {
+                        width: 100%;
+                        height: 220px;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    .uc-card-body {
+                        padding: 1.5rem 1.5rem 1.75rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                        flex: 1;
+                    }
+                    .uc-tag {
+                        display: inline-block;
+                        background: var(--primary-light);
+                        color: var(--primary-color);
+                        font-size: 0.725rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 0.08em;
+                        padding: 0.25rem 0.7rem;
+                        border-radius: 999px;
+                        margin-bottom: 0.4rem;
+                        width: fit-content;
+                    }
+                    .uc-card-body h3 {
+                        font-size: 1.2rem;
+                        margin: 0;
+                        font-weight: 700;
+                        color: var(--text-primary);
+                    }
+                    .uc-card-body p {
+                        font-size: 0.9rem;
+                        color: var(--text-secondary);
+                        margin: 0;
+                        line-height: 1.65;
+                    }
+                    .uc-card-body a {
+                        margin-top: 0.75rem;
+                        font-size: 0.875rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                        text-decoration: none;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.35rem;
+                    }
+                    .uc-card-body a:hover {
+                        text-decoration: underline;
+                    }
+                </style>
+
+                <div class="usecase-grid">
+                    <!-- Use Case 1 — E-commerce -->
+                    <div class="uc-card">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=85"
+                            alt="E-commerce support">
+                        <div class="uc-card-body">
+                            <span class="uc-tag">E-commerce</span>
+                            <h3>Online Store Owners</h3>
+                            <p>Product listings, order management, customer service, and returns handled end-to-end so
+                                you can focus on growth.</p>
+                            <a href="services.html">
+                                Explore services
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Use Case 2 — Agencies -->
+                    <div class="uc-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=85"
+                            alt="Agency team meeting">
+                        <div class="uc-card-body">
+                            <span class="uc-tag">Agencies</span>
+                            <h3>Marketing & Creative Agencies</h3>
+                            <p>Reporting, client communication, social media scheduling, and admin tasks — done before
+                                your morning coffee.</p>
+                            <a href="services.html">
+                                Explore services
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Use Case 3 — Startups -->
+                    <div class="uc-card">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=85"
+                            alt="Startup founder working">
+                        <div class="uc-card-body">
+                            <span class="uc-tag">Startups</span>
+                            <h3>Founders & Entrepreneurs</h3>
+                            <p>Move fast without burning out. Delegate research, inbox, scheduling, and bookkeeping to
+                                your VA from day one.</p>
+                            <a href="services.html">
+                                Explore services
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- Testimonials Section -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 52px;">
+                    <span
+                        style="background: var(--primary-light); color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.775rem; padding: 0.4rem 0.9rem; border-radius: 999px; display: inline-block; margin-bottom: 1.25rem;">
+                        Client Stories
+                    </span>
+                    <h2 style="font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 0.75rem;">
+                        Loved by teams worldwide
+                    </h2>
+                    <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto; font-size: 1rem; line-height: 1.7;">
+                        Real results from real clients who scaled with Virtual Assistant Agency.
+                    </p>
+                </div>
+
+                <style>
+                    .testimonial-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                        align-items: stretch;
+                    }
+                    @media (min-width: 768px) {
+                        .testimonial-grid {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                    .t-card {
+                        padding: 2rem;
+                        border-radius: 16px;
+                        border: 1px solid var(--border-color);
+                        background: var(--bg-color);
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+                    }
+                    .t-stars {
+                        color: #f59e0b;
+                        font-size: 1.1rem;
+                        letter-spacing: 2px;
+                    }
+                    .t-quote {
+                        font-size: 1.05rem;
+                        font-style: italic;
+                        color: var(--text-primary);
+                        line-height: 1.7;
+                        flex: 1;
+                    }
+                    .t-author {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.875rem;
+                    }
+                    .t-avatar {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        flex-shrink: 0;
+                    }
+                    .t-name {
+                        font-weight: 700;
+                        font-size: 0.95rem;
+                        color: var(--text-primary);
+                    }
+                    .t-role {
+                        font-size: 0.8rem;
+                        color: var(--text-tertiary);
+                    }
+                </style>
+
+                <div class="testimonial-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="t-card">
+                        <div class="t-stars">★★★★★</div>
+                        <p class="t-quote">"Within two weeks of onboarding, my VA was managing my entire inbox and
+                            booking calendar independently. I now have 20+ hours a week back to focus on clients.
+                            Absolutely game-changing."</p>
+                        <div class="t-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                                alt="Laura K." class="t-avatar">
+                            <div>
+                                <div class="t-name">Laura Kim</div>
+                                <div class="t-role">CEO, Momentum Consulting</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="t-card">
+                        <div class="t-stars">★★★★★</div>
+                        <p class="t-quote">"The account manager model is what sets this apart. I never had to train or
+                            manage my VA — they came fully prepared. Our Shopify store's customer support response time
+                            dropped from 8 hours to under 30 minutes."</p>
+                        <div class="t-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                                alt="David R." class="t-avatar">
+                            <div>
+                                <div class="t-name">David Reyes</div>
+                                <div class="t-role">Founder, PureCart Brands</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- CTA Banner -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section" style="background-color: var(--surface-color);">
+            <div class="container">
+                <div class="card text-center"
+                    style="background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%); border: none; padding: 4.5rem 2rem; border-radius: 20px; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: rgba(255,255,255,0.05); border-radius: 50%;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: -80px; left: -40px; width: 280px; height: 280px; background: rgba(255,255,255,0.04); border-radius: 50%;">
+                    </div>
+                    <span
+                        style="display: inline-block; background: rgba(255,255,255,0.15); color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.775rem; padding: 0.4rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;">
+                        Get Started Today
+                    </span>
+                    <h2 style="color: white; font-size: clamp(1.75rem, 4vw, 2.75rem); margin-bottom: 1rem; position: relative;">
+                        Your first VA is one click away.
+                    </h2>
+                    <p
+                        style="color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7; position: relative;">
+                        Join 500+ businesses already saving time and scaling faster with our fully-managed virtual
+                        assistant service.
+                    </p>
+                    <div class="flex justify-center gap-4 flex-wrap" style="position: relative;">
+                        <a href="signup.html" class="btn"
+                            style="background: white; color: var(--primary-color); font-weight: 700; padding: 0.85rem 2rem; font-size: 1rem;">
+                            Hire a Virtual Assistant
+                        </a>
+                        <a href="pricing.html" class="btn"
+                            style="background: transparent; border: 2px solid rgba(255,255,255,0.55); color: white; font-weight: 600; padding: 0.85rem 2rem; font-size: 1rem;">
+                            View Pricing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <div id="footer-placeholder"></div>

@@ -34,13 +34,13 @@
     </header>
 
     <main>
-        <section class="section" style="background-color: var(--surface-color); border-bottom: 1px solid var(--border-color);">
+        <section id="service-hero" class="section" style="background-color: var(--surface-color); border-bottom: 1px solid var(--border-color); color: white;">
             <div class="container">
-                <a href="services.html" style="color: var(--text-tertiary); font-size: 0.875rem; display: inline-block; margin-bottom: 16px;">&larr; Back to Services</a>
-                <h1 style="margin-bottom: 16px;">Admin & Scheduling Services</h1>
-                <p style="font-size: 1.125rem; max-width: 600px;">Reclaim your time by offloading your inbox, calendar, and daily administrative friction to a dedicated professional.</p>
+                <a href="services.html" style="color: rgba(255,255,255,0.7); font-size: 0.875rem; display: inline-block; margin-bottom: 16px;">&larr; Back to Services</a>
+                <h1 id="service-heading" style="margin-bottom: 16px; color: white;">Service Details</h1>
+                <p id="service-description" style="font-size: 1.125rem; max-width: 600px;">Reclaim your time by offloading your inbox, calendar, and daily administrative friction to a dedicated professional.</p>
                 <div style="margin-top: 24px;">
-                    <a href="signup.html" class="btn btn-primary">Hire an Admin VA</a>
+                    <a href="signup.html" id="service-btn" class="btn btn-primary">Hire an Admin VA</a>
                 </div>
             </div>
         </section>
@@ -48,35 +48,17 @@
         <section class="section">
             <div class="container grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2>What our admin assistants do best:</h2>
-                    <ul style="margin-top: 24px;">
-                        <li style="margin-bottom: 16px; display: flex; gap: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><strong>Inbox Management:</strong> Sorting, responding to, and archiving emails based on your rules.</span>
-                        </li>
-                        <li style="margin-bottom: 16px; display: flex; gap: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><strong>Calendar Booking:</strong> Coordinating meetings across time zones without the back-and-forth.</span>
-                        </li>
-                        <li style="margin-bottom: 16px; display: flex; gap: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><strong>Travel Arrangements:</strong> Booking flights, hotels, and preparing detailed itineraries.</span>
-                        </li>
-                        <li style="margin-bottom: 16px; display: flex; gap: 8px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span><strong>Document Prep:</strong> Formatting presentations, standardizing documents, and data organization.</span>
-                        </li>
+                    <h2 id="features-title">What our admin assistants do best:</h2>
+                    <ul id="features-list" style="margin-top: 24px;">
+                        <!-- Features will be loaded here -->
                     </ul>
                 </div>
                 <div class="card" style="background-color: var(--bg-color);">
                     <h3>How it works via Dashboard</h3>
                     <p>Once you sign up, you'll get access to the Virtual Assistant Agency Client Dashboard. From there, you can:</p>
                     <div style="background-color: var(--surface-hover); padding: 16px; border-radius: var(--radius-sm); margin-top: 16px;">
-                        <ol style="margin-left: 16px;">
-                            <li style="margin-bottom: 8px;">Create an "Inbox Management" recurring task.</li>
-                            <li style="margin-bottom: 8px;">Upload your SOPs / Guidelines securely.</li>
-                            <li style="margin-bottom: 8px;">Chat with your VA in real-time.</li>
-                            <li>Track exact billable hours on your dashboard.</li>
+                        <ol id="steps-list" style="margin-left: 16px;">
+                            <!-- Steps will be loaded here -->
                         </ol>
                     </div>
                 </div>
@@ -87,6 +69,7 @@
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/footer.js" defer></script>
+    <script src="assets/js/service-details.js" defer></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
