@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,14 @@
             background-color: var(--surface-color);
         }
 
+        /* ─── DASHBOARD LAYOUT ─────────────────────────────────────── */
         .dashboard-layout {
             display: flex;
+            flex-direction: row;
             min-height: 100vh;
         }
 
-        /* Sidebar */
+        /* ─── SIDEBAR ──────────────────────────────────────────────── */
         .sidebar {
             width: 250px;
             background-color: var(--bg-color);
@@ -29,6 +31,16 @@
             transition: transform 0.3s ease;
             z-index: 40;
             overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* RTL */
+        body.rtl-active .dashboard-layout {
+            direction: rtl;
+        }
+        body.rtl-active .sidebar {
+            border-right: none;
+            border-left: 1px solid var(--border-color);
         }
 
         .sidebar-header {
@@ -74,15 +86,15 @@
             border-right: 3px solid var(--primary-color);
         }
 
-        /* Main Content Area */
+        /* ─── MAIN CONTENT ──────────────────────────────────────────── */
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             min-width: 0;
-            /* Important for flex child truncation */
         }
 
+        /* ─── TOPBAR ────────────────────────────────────────────────── */
         .topbar {
             height: 4.5rem;
             background-color: var(--bg-color);
@@ -92,147 +104,69 @@
             justify-content: space-between;
             padding: 0 var(--space-4);
             z-index: 30;
+            flex-wrap: nowrap; /* never wrap topbar items */
         }
 
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        #pageTitle {
+            margin: 0;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ─── PAGE CONTENT ──────────────────────────────────────────── */
         .page-content {
             padding: var(--space-4);
             flex: 1;
             overflow-y: auto;
         }
 
-        /* Tabs */
+        /* ─── TABS ──────────────────────────────────────────────────── */
         .tab-content {
             display: none;
         }
-
         .tab-content.active {
             display: block;
             animation: fadeIn 0.3s ease;
         }
-
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to   { opacity: 1; }
         }
 
-        /* Skeletons */
+        /* ─── SKELETON ──────────────────────────────────────────────── */
         .skeleton {
             background: linear-gradient(90deg, var(--surface-hover) 25%, var(--border-color) 50%, var(--surface-hover) 75%);
             background-size: 200% 100%;
             animation: loading 1.5s infinite;
             border-radius: var(--radius-md);
         }
-
-        .skeleton-text {
-            height: 20px;
-            margin-bottom: 8px;
-            width: 100%;
-        }
-
-        .skeleton-title {
-            height: 32px;
-            margin-bottom: 16px;
-            width: 40%;
-        }
-
-        .skeleton-card {
-            height: 120px;
-            width: 100%;
-        }
-
+        .skeleton-text  { height: 20px;  margin-bottom: 8px;  width: 100%; }
+        .skeleton-title { height: 32px;  margin-bottom: 16px; width: 40%; }
+        .skeleton-card  { height: 120px; width: 100%; }
         @keyframes loading {
-            0% {
-                background-position: 200% 0;
-            }
-
-            100% {
-                background-position: -200% 0;
-            }
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
-        /* Mobile Adjustments */
+        /* ─── SIDEBAR OVERLAY ───────────────────────────────────────── */
         .sidebar-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0,0,0,0.5);
             z-index: 35;
         }
 
-        @media (max-width: 1024px) {
-            .sidebar {
-                position: fixed;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                transform: translateX(-100%);
-            }
-
-            .sidebar.open {
-                transform: translateX(0);
-            }
-
-            .sidebar-overlay.open {
-                display: block;
-            }
-
-            .topbar {
-                padding: 0 var(--space-2);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .user-info {
-                display: none;
-            }
-            .search-bar {
-                max-width: 150px;
-            }
-            .search-bar input::placeholder {
-                color: transparent;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .search-bar {
-                display: none;
-            }
-            .topbar-right {
-                gap: var(--space-2);
-            }
-        }
-
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 400px) {
-            .topbar {
-                padding: 0 0.5rem;
-            }
-
-            .sidebar-toggle {
-                margin-right: 0.5rem !important;
-            }
-
-            .topbar-right {
-                gap: 0.5rem;
-            }
-
-            .card {
-                padding: var(--space-3);
-            }
-        }
-
-        /* Tab Header Responsive */
+        /* ─── TAB HEADER ─────────────────────────────────────────────── */
         .tab-header {
             display: flex;
             justify-content: space-between;
@@ -241,19 +175,115 @@
             margin-bottom: 24px;
         }
 
+        /* ─── STATUS PILLS ──────────────────────────────────────────── */
+        .status {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .status-pending   { background-color: var(--warning); color: #fff; }
+        .status-progress  { background-color: var(--info);    color: #fff; }
+        .status-completed { background-color: var(--success); color: #fff; }
+
+        /* ─── TABLES ─────────────────────────────────────────────────── */
+        table { width: 100%; border-collapse: collapse; }
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th { font-weight: 600; color: var(--text-secondary); font-size: 0.875rem; }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 1rem;
+        }
+
+        /* ─── DROPDOWN ───────────────────────────────────────────────── */
+        .dropdown-item { transition: background-color 0.2s; }
+        .dropdown-item:hover { background-color: var(--surface-hover); }
+
+        /* ─── RTL DASHBOARD FIXES ────────────────────────────────────── */
+        [dir="rtl"] .sidebar {
+            left: auto; right: 0;
+            border-right: none;
+            border-left: 1px solid var(--border-color);
+        }
+        [dir="rtl"] .sidebar-toggle { margin-right: 0; margin-left: 1rem; }
+        [dir="rtl"] .sidebar-link svg { margin-right: 0; margin-left: 12px; }
+        [dir="rtl"] .sidebar-link.active::after { right: auto; left: 0; }
+
+        /* ─── LAPTOP (≥1024px) ───────────────────────────────────────── */
+        @media (min-width: 1024px) {
+            .lg-span-2 { grid-column: span 2; }
+            .mobile-menu-btn { display: none !important; }
+        }
+
+        /* ─── TABLET (<1024px) ───────────────────────────────────────── */
+        @media (max-width: 1023px) {
+            /* Sidebar becomes a slide-in drawer */
+            .sidebar {
+                position: fixed;
+                top: 0; bottom: 0; left: 0;
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .sidebar-overlay.open {
+                display: block;
+            }
+            [dir="rtl"] .sidebar {
+                left: auto; right: 0;
+                transform: translateX(100%);
+            }
+            [dir="rtl"] .sidebar.open {
+                transform: translateX(0);
+            }
+            [dir="rtl"] .main-content { margin-right: 0; }
+
+            /* Hamburger always visible on tablet/mobile */
+            .mobile-menu-btn {
+                display: flex !important;
+                background: var(--surface-hover);
+                border: 1px solid var(--border-color);
+                border-radius: var(--radius-md);
+                padding: 0.4rem;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .topbar { padding: 0 var(--space-3); }
+
+            /* Tablet stat grid: 2 columns */
+            .dash-stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        /* ─── MOBILE (≤640px) ────────────────────────────────────────── */
         @media (max-width: 640px) {
+            .topbar { padding: 0 12px; }
+            .page-content { padding: var(--space-3) 12px; }
+
+            #pageTitle { font-size: 1rem; }
+
+            /* Tab header: stack vertically */
             .tab-header {
                 flex-direction: column;
                 align-items: stretch;
-                gap: var(--space-3);
             }
-
             .tab-header .flex {
                 flex-direction: column;
                 width: 100%;
                 gap: var(--space-2);
             }
-
             .tab-header input,
             .tab-header select,
             .tab-header .btn {
@@ -262,106 +292,33 @@
             }
         }
 
-        /* RTL Specific Dashboard Fixes */
-        [dir="rtl"] .sidebar {
-            left: auto;
-            right: 0;
-            border-right: none;
-            border-left: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 1024px) {
-            [dir="rtl"] .sidebar {
-                transform: translateX(100%);
-                left: auto;
-                right: 0;
+        /* ─── MOBILE 445px ───────────────────────────────────────────── */
+        @media (max-width: 480px) {
+            .topbar {
+                padding: 0 8px;
+                height: 56px;
             }
-            [dir="rtl"] .sidebar.open {
-                transform: translateX(0);
+            .topbar-left { gap: 8px; }
+            #pageTitle { font-size: 0.9rem; }
+
+            /* Stat cards: 1 column */
+            .dash-stats-grid {
+                grid-template-columns: 1fr !important;
             }
-        }
 
-        [dir="rtl"] .main-content {
-            margin-left: 0;
-            margin-right: 280px;
-        }
-
-        @media (max-width: 1024px) {
-            [dir="rtl"] .main-content {
-                margin-right: 0;
+            /* Settings 2-col form → 1-col */
+            .settings-name-grid {
+                grid-template-columns: 1fr !important;
             }
-        }
 
-        [dir="rtl"] .sidebar-toggle {
-            margin-right: 0;
-            margin-left: 1rem;
-        }
+            .page-content { padding: 12px 8px; }
 
-        [dir="rtl"] .sidebar-link svg {
-            margin-right: 0;
-            margin-left: 12px;
-        }
+            /* Cards slightly less padding */
+            .card { padding: var(--space-3) !important; }
 
-        [dir="rtl"] .sidebar-link.active::after {
-            right: auto;
-            left: 0;
-        }
-
-        /* Status Pills */
-        .status {
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .status-pending {
-            background-color: var(--warning);
-            color: #fff;
-        }
-
-        .status-progress {
-            background-color: var(--info);
-            color: #fff;
-        }
-
-        .status-completed {
-            background-color: var(--success);
-            color: #fff;
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            font-weight: 600;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        /* Profile Dropdown */
-        .dropdown-item {
-            transition: background-color 0.2s;
-        }
-
-        .dropdown-item:hover {
-            background-color: var(--surface-hover);
-        }
-
-        @media (min-width: 1024px) {
-            .lg-span-2 {
-                grid-column: span 2;
+            /* Billing grid: 1 col */
+            .billing-top-grid {
+                grid-template-columns: 1fr !important;
             }
         }
     </style>
@@ -380,8 +337,7 @@
                         <polygon points="12 2 2 7 12 12 22 7 12 2" />
                         <polyline points="2 17 12 22 22 17" />
                         <polyline points="2 12 12 17 22 12" />
-                    </svg>
-                    Virtual Assistant Agency
+                    </svg> Virtual Assistant
                 </a>
             </div>
             <div style="padding: 24px var(--space-4); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px; background-color: var(--surface-hover);">
@@ -447,12 +403,6 @@
                 <div style="padding: 16px var(--space-3) 8px; font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; border-top: 1px solid var(--border-color); margin-top: 8px;">
                     Appearance
                 </div>
-                <a href="#" id="rtl-toggle" class="sidebar-link">
-                    <div style="display: flex; align-items: center; width: 20px; justify-content: center;">
-                        <span style="font-size: 0.6rem; font-weight: 800;">RTL</span>
-                    </div>
-                    <span>RTL Mode</span>
-                </a>
                 <a href="#" id="theme-toggle" class="sidebar-link">
                     <div id="theme-icon-container" style="display: flex; align-items: center;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -473,7 +423,7 @@
         <main class="main-content">
             <!-- Topbar -->
             <header class="topbar">
-                <div class="flex items-center gap-4">
+                <div class="topbar-left flex items-center gap-4">
                     <button id="sidebarToggle" class="mobile-menu-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -503,7 +453,8 @@
 
                 <!-- OVERVIEW TAB -->
                 <div id="overview" class="tab-content active">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" style="margin-bottom: 32px;">
+                    <div class="dash-stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" style="margin-bottom: 32px;">
+
                         <div class="card flex flex-col justify-center">
                             <span style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 8px;">Total
                                 Hours Billed</span>

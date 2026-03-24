@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,7 @@
 
         .dashboard-layout {
             display: flex;
+            flex-direction: row; /* Sidebar Left by default */
             min-height: 100vh;
         }
 
@@ -28,6 +29,17 @@
             flex-direction: column;
             transition: transform 0.3s ease;
             z-index: 40;
+        }
+
+        /* RTL Active State - Sidebar moves to RIGHT */
+        body.rtl-active .dashboard-layout {
+            flex-direction: row;
+            direction: rtl;
+        }
+
+        body.rtl-active .sidebar {
+            border-right: none;
+            border-left: 1px solid var(--border-color);
         }
 
         .sidebar-header {
@@ -259,8 +271,7 @@
                         <polygon points="12 2 2 7 12 12 22 7 12 2" />
                         <polyline points="2 17 12 22 22 17" />
                         <polyline points="2 12 12 17 22 12" />
-                    </svg>
-                    Virtual Assistant Agency <span
+                    </svg> Virtual Assistant <span
                         style="font-size: 0.75rem; background: var(--danger); color: white; padding: 2px 6px; border-radius: 4px; margin-left: 8px;">ADMIN</span>
                 </a>
             </div>
@@ -328,10 +339,6 @@
                     <h2 id="pageTitle" style="margin: 0; font-size: 1.25rem;">Analytics</h2>
                 </div>
                 <div class="flex items-center gap-4">
-                    <button id="rtl-toggle" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR" 
-                       style="padding: 0.4rem 0.6rem; border-radius: var(--radius-md); background: var(--surface-hover); border: 1px solid var(--border-color); cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px;">
-                        <span style="font-size: 0.7rem; font-weight: 700;">RTL</span>
-                    </button>
                     <a href="dashboard.html" class="btn-nav-dashboard" style="margin-right: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

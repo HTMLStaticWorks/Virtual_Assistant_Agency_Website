@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.1">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
 </head>
@@ -23,7 +23,7 @@
 <body>
 
     <!-- Header / Navbar -->
-    <header class="navbar">
+        <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -31,29 +31,24 @@
                     <polygon points="12 2 2 7 12 12 22 7 12 2" />
                     <polyline points="2 17 12 22 22 17" />
                     <polyline points="2 12 12 17 22 12" />
-                </svg>
-                Virtual Assistant Agency
+                </svg> Virtual Assistant
             </a>
 
             <nav class="nav-links">
-                <a href="index.html" style="color: var(--primary-color);">Home</a>
+                <a href="index.html">Home</a>
                 <a href="home-2.html">Home 2</a>
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="dashboard.html" class="mobile-only">Dashboard</a>
+                <a href="login.html" class="mobile-only">Login</a>
+                <a href="signup.html" class="btn btn-primary mobile-only" style="margin-top: 1rem; text-align: center; color: white !important;">Hire a VA</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="dashboard.html" class="btn btn-secondary" title="Dashboard">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="3" y1="9" x2="21" y2="9"></line>
-                        <line x1="9" y1="21" x2="9" y2="9"></line>
-                    </svg>
-                </a>
+                <a href="dashboard.html" class="btn btn-secondary btn-nav-dashboard" title="Dashboard">Dashboard</a>
                 <a href="login.html" class="btn btn-secondary">Login</a>
-                <button id="rtl-toggle" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR">
+                <button id="rtl-toggle" class="btn btn-secondary" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR">
                     <span style="font-size: 0.75rem; font-weight: 700;">RTL</span>
                 </button>
                 <button id="theme-toggle" class="btn btn-secondary" aria-label="Toggle Dark Mode">
@@ -63,7 +58,7 @@
                     </svg>
                 </button>
                 <a href="signup.html" class="btn btn-primary">Hire a VA</a>
-                <button class="mobile-menu-btn" aria-label="Menu">
+                <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="6" x2="21" y2="6" />
@@ -319,13 +314,14 @@
         <!-- Testimonial Section -->
         <section class="section" style="background-color: var(--surface-color);">
             <div class="container">
-                <div class="text-center" style="margin-bottom: 48px;">
-                    <h2>Trusted by Founders & Teams</h2>
-                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="card card-hover-3d text-center" style="border: none;">
-                        <div class="flex justify-center gap-1" style="color: var(--warning); margin-bottom: 16px;">
-                            ★★★★★
+                        <div class="flex justify-center gap-1" style="color: #FFB800; margin-bottom: 16px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <p
                             style="font-size: 1.125rem; font-style: italic; color: var(--text-primary); margin-bottom: 24px; text-align: center;">
@@ -343,8 +339,12 @@
                         </div>
                     </div>
                     <div class="card card-hover-3d text-center" style="border: none;">
-                        <div class="flex justify-center gap-1" style="color: var(--warning); margin-bottom: 16px;">
-                            ★★★★★
+                        <div class="flex justify-center gap-1" style="color: #FFB800; margin-bottom: 16px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
                         <p
                             style="font-size: 1.125rem; font-style: italic; color: var(--text-primary); margin-bottom: 24px; text-align: center;">
@@ -362,6 +362,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center" style="margin-top: 48px;">
+                    <h2 style="font-size: 1.5rem; color: var(--text-secondary); opacity: 0.8;">Trusted by Founders & Teams</h2>
+                </div>
             </div>
         </section>
 
@@ -370,7 +373,7 @@
             <div class="container">
 
                 <style>
-                    /* ── Service Area Section ── */
+                    /* â”€â”€ Service Area Section â”€â”€ */
                     .sa-outer-grid {
                         display: grid;
                         grid-template-columns: 1fr;
@@ -384,7 +387,7 @@
                         }
                     }
 
-                    /* Left: 2×2 card grid */
+                    /* Left: 2Ã—2 card grid */
                     .sa-cards-grid {
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
@@ -521,10 +524,10 @@
 
                 <div class="sa-outer-grid">
 
-                    <!-- ── LEFT: 4 Feature Cards ── -->
+                    <!-- â”€â”€ LEFT: 4 Feature Cards â”€â”€ -->
                     <div class="sa-cards-grid">
 
-                        <!-- Card 1 — Flexible Scaling -->
+                        <!-- Card 1 â€” Flexible Scaling -->
                         <div class="card sa-card card-hover-3d reveal">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
                                 alt="Flexible Scaling" class="sa-card-img">
@@ -543,7 +546,7 @@
                             </div>
                         </div>
 
-                        <!-- Card 2 — Vetted Professionals -->
+                        <!-- Card 2 â€” Vetted Professionals -->
                         <div class="card sa-card card-hover-3d reveal">
                             <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80"
                                 alt="Vetted Professionals" class="sa-card-img">
@@ -561,7 +564,7 @@
                             </div>
                         </div>
 
-                        <!-- Card 3 — Seamless Onboarding -->
+                        <!-- Card 3 â€” Seamless Onboarding -->
                         <div class="card sa-card card-hover-3d reveal">
                             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80"
                                 alt="Seamless Onboarding" class="sa-card-img">
@@ -583,7 +586,7 @@
                             </div>
                         </div>
 
-                        <!-- Card 4 — Dedicated Support -->
+                        <!-- Card 4 â€” Dedicated Support -->
                         <div class="card sa-card card-hover-3d reveal">
                             <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?w=600&q=80"
                                 alt="Dedicated Support" class="sa-card-img">
@@ -607,7 +610,7 @@
                     </div>
                     <!-- end left cards -->
 
-                    <!-- ── RIGHT: Highlight Cards + Heading ── -->
+                    <!-- â”€â”€ RIGHT: Highlight Cards + Heading â”€â”€ -->
                     <div class="sa-right-col">
 
                         <!-- Highlight Card 1 -->
@@ -711,3 +714,6 @@
 </body>
 
 </html>
+
+
+

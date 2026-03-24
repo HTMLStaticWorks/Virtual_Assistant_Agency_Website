@@ -86,6 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 400); // 400ms fake loading
   }
 
+  // --- RTL Toggle functionality ---
+  const rtlToggle = document.getElementById('rtl-toggle');
+  
+  // Check local storage on load
+  const isRTL = localStorage.getItem('rtl') === 'true';
+  if (isRTL) {
+      document.documentElement.setAttribute('dir', 'rtl');
+      document.body.classList.add('rtl-active');
+  } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+      document.body.classList.remove('rtl-active');
+  }
+
+  if (rtlToggle) {
+      // RTL toggle removed from UI
+  }
+
   // Add click events to links
   tabLinks.forEach(link => {
       link.addEventListener('click', (e) => {
