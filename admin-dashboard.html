@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -152,6 +152,36 @@
             z-index: 35;
         }
 
+        /* RTL Specific Admin Fixes */
+        [dir="rtl"] .sidebar {
+            left: auto;
+            right: 0;
+            border-right: none;
+            border-left: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 1024px) {
+            [dir="rtl"] .sidebar {
+                transform: translateX(100%);
+                left: auto;
+                right: 0;
+            }
+            [dir="rtl"] .sidebar.open {
+                transform: translateX(0);
+            }
+        }
+
+        [dir="rtl"] .main-content {
+            margin-left: 0;
+            margin-right: 280px;
+        }
+
+        @media (max-width: 1024px) {
+            [dir="rtl"] .main-content {
+                margin-right: 0;
+            }
+        }
+
         @media (max-width: 768px) {
             .sidebar {
                 position: fixed;
@@ -298,6 +328,10 @@
                     <h2 id="pageTitle" style="margin: 0; font-size: 1.25rem;">Analytics</h2>
                 </div>
                 <div class="flex items-center gap-4">
+                    <button id="rtl-toggle" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR" 
+                       style="padding: 0.4rem 0.6rem; border-radius: var(--radius-md); background: var(--surface-hover); border: 1px solid var(--border-color); cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px;">
+                        <span style="font-size: 0.7rem; font-weight: 700;">RTL</span>
+                    </button>
                     <a href="dashboard.html" class="btn-nav-dashboard" style="margin-right: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

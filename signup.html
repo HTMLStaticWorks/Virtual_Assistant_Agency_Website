@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <title>Sign Up - Virtual Assistant Agency Dashboard</title>
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <style>
@@ -41,6 +41,7 @@
 
 <body>
     <div class="auth-container">
+        <!-- Section 1: Brand Header -->
         <div class="login-logo" style="display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; max-width: 500px; margin-left: auto; margin-right: auto;">
             <a href="index.html" class="nav-logo" style="font-size: 1.5rem; margin-bottom: 0;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -52,11 +53,16 @@
                 Virtual Assistant Agency
             </a>
             <div class="flex items-center gap-2">
-                <button id="theme-toggle" class="btn btn-secondary" style="padding: 0.5rem; border: none;">
+                <button id="rtl-toggle">
+                    <span style="font-size: 0.75rem; font-weight: 700;">RTL</span>
+                </button>
+                <button id="theme-toggle" class="btn btn-secondary" aria-label="Toggle Dark Mode">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
             </div>
         </div>
+
+        <!-- Section 2: Registration Form Card -->
         <div class="auth-card">
             <div style="text-align: center; margin-bottom: 32px;">
                 <h1 style="font-size: 1.5rem; margin-bottom: 8px;">Create your account</h1>
@@ -104,8 +110,10 @@
                     in</a>
             </div>
         </div>
+
     </div>
 
     <script src="assets/js/main.js"></script>
+    </script>
 </body>
 </html>

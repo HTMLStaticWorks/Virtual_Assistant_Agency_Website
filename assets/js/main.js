@@ -38,13 +38,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- RTL Toggle ---
+  const rtlToggle = document.getElementById('rtl-toggle');
+  
+  // Check local storage
+  const isRTL = localStorage.getItem('rtl') === 'true';
+  
+  if (isRTL) {
+    document.documentElement.setAttribute('dir', 'rtl');
+    updateRTLIcon(true);
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+    updateRTLIcon(false);
+  }
+
+  if (rtlToggle) {
+    rtlToggle.addEventListener('click', () => {
+      const currentDir = document.documentElement.getAttribute('dir');
+      const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+      
+      document.documentElement.setAttribute('dir', newDir);
+      localStorage.setItem('rtl', newDir === 'rtl' ? 'true' : 'false');
+      updateRTLIcon(newDir === 'rtl');
+    });
+  }
+
+  function updateRTLIcon(rtl) {
+    if (!rtlToggle) return;
+    rtlToggle.innerHTML = '<span style="font-size: 0.75rem; font-weight: 700;">RTL</span>';
+  }
+
   // --- Dark Mode Toggle ---
   const themeToggle = document.getElementById('theme-toggle');
-  
+
   // Check local storage or system preference
   const savedTheme = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
+
   if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
     document.documentElement.setAttribute('data-theme', 'dark');
     updateThemeIcon('dark');
@@ -54,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
+
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateThemeIcon(newTheme);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -41,7 +41,8 @@
 
 <body>
     <div class="auth-container">
-        <div class="login-logo">
+        <!-- Section 1: Brand & Logo -->
+        <div class="login-logo" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
             <a href="index.html" class="nav-logo" style="font-size: 1.5rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -51,7 +52,12 @@
                 </svg>
                 Virtual Assistant Agency
             </a>
+            <button id="rtl-toggle">
+                <span style="font-size: 0.75rem; font-weight: 700;">RTL</span>
+            </button>
         </div>
+
+        <!-- Section 2: Login Form -->
         <div class="auth-card">
             <div style="text-align: center; margin-bottom: 32px;">
                 <h1 style="font-size: 1.5rem; margin-bottom: 8px;">Welcome back</h1>
@@ -67,7 +73,7 @@
                 <div class="form-group" style="margin-bottom: 24px;">
                     <div class="flex justify-between items-center" style="margin-bottom: var(--space-1);">
                         <label class="form-label" for="password" style="margin: 0;">Password</label>
-                        <a href="#" style="font-size: 0.75rem; color: var(--primary-color);">Forgot password?</a>
+                        <a href="forgot-password.html" style="font-size: 0.75rem; color: var(--primary-color);">Forgot password?</a>
                     </div>
                     <input class="form-control" type="password" id="password" required placeholder="••••••••">
                 </div>
@@ -87,6 +93,7 @@
                     up</a>
             </div>
         </div>
+
     </div>
 
     <script src="assets/js/main.js"></script>
