@@ -578,13 +578,33 @@ html[dir="rtl"] .dashboard-layout {
   border-color: #ffffff !important;
 }
 
+/* CTA Button Group for Mobile */
+.cta-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .cta-button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
 @media (max-width: 480px) {
   #cta-hire-va,
-  #cta-view-pricing {
+  #cta-view-pricing,
+  .cta-button-group .btn {
     width: 100% !important;
+    max-width: 340px;
     white-space: normal !important;
     text-align: center;
-    padding: 0.85rem 1rem !important;
+    padding: 1rem 1.5rem !important;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -673,7 +693,7 @@ html[dir="rtl"] .dashboard-layout {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 2000;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
