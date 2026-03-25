@@ -37,6 +37,7 @@
             </nav>
 
             <div class="nav-actions">
+                
                 <a href="dashboard.html" class="btn btn-secondary btn-nav-dashboard" title="Dashboard">Dashboard</a>
                 <a href="login.html" class="btn btn-secondary">Login</a>
                 <button id="rtl-toggle" class="btn btn-secondary" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR">
@@ -49,14 +50,6 @@
                     </svg>
                 </button>
                 <a href="signup.html" class="btn btn-primary">Hire a VA</a>
-                <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="6" x2="21" y2="6" />
-                        <line x1="3" y1="12" x2="21" y2="12" />
-                        <line x1="3" y1="18" x2="21" y2="18" />
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
@@ -70,10 +63,10 @@
         </section>
 
         <section class="section reveal">
-            <div class="container grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8" style="align-items: center;">
+            <div class="container grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8" style="align-items: stretch;">
 
                 <!-- Plan 1 -->
-                <div class="card" style="text-align: center;">
+                <div class="card" style="text-align: center; display: flex; flex-direction: column;">
                     <h3 style="color: var(--text-secondary); margin-bottom: 8px;">Part-Time</h3>
                     <div style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 24px;">
                         $900<span style="font-size: 1rem; color: var(--text-tertiary); font-weight: 400;">/mo</span>
@@ -107,14 +100,14 @@
                             <span>Access to Dashboard & Chat</span>
                         </li>
                     </ul>
-                    <div style="display: flex; justify-content: center;">
+                    <div style="display: flex; justify-content: center; margin-top: auto;">
                         <a href="signup.html" class="btn btn-primary" style="padding: 0.65rem 1.75rem; font-size: 0.9375rem; border-radius: 999px; box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);">Get Started</a>
                     </div>
                 </div>
 
                 <!-- Plan 2 (Highlighted) -->
                 <div class="card"
-                    style="text-align: center; border-color: var(--primary-color); box-shadow: var(--shadow-lg); transform: scale(1.05); z-index: 10;">
+                    style="text-align: center; border-color: var(--primary-color); box-shadow: var(--shadow-lg); transform: scale(1.05); z-index: 10; display: flex; flex-direction: column;">
                     <div
                         style="background-color: var(--primary-color); color: white; padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 16px;">
                         MOST POPULAR</div>
@@ -151,13 +144,13 @@
                             <span>Priority Task Routing</span>
                         </li>
                     </ul>
-                    <div style="display: flex; justify-content: center;">
+                    <div style="display: flex; justify-content: center; margin-top: auto;">
                         <a href="signup.html" class="btn btn-primary" style="padding: 0.75rem 2.25rem; font-size: 1rem; border-radius: 999px; box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39); background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%); border: none;">Get Started</a>
                     </div>
                 </div>
 
                 <!-- Plan 3 -->
-                <div class="card" style="text-align: center;">
+                <div class="card" style="text-align: center; display: flex; flex-direction: column;">
                     <h3 style="color: var(--text-secondary); margin-bottom: 8px;">Full-Time</h3>
                     <div style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 24px;">
                         $3,000<span style="font-size: 1rem; color: var(--text-tertiary); font-weight: 400;">/mo</span>
@@ -191,7 +184,7 @@
                             <span>Custom SOP Development included</span>
                         </li>
                     </ul>
-                    <div style="display: flex; justify-content: center;">
+                    <div style="display: flex; justify-content: center; margin-top: auto;">
                         <a href="contact.html" class="btn btn-primary" style="padding: 0.65rem 1.75rem; font-size: 0.9375rem; border-radius: 999px;">Contact Sales</a>
                     </div>
                 </div>
@@ -214,28 +207,163 @@
         </section>
 
         <!-- Pricing FAQ -->
-        <section class="section reveal">
-            <div class="container">
-                <div class="text-center" style="margin-bottom: 64px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Frequently Asked Questions</h2>
-                    <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Everything you need to know about our billing and service terms.</p>
+        <section class="section reveal" style="background-color: #f8fafc; padding: 100px 0;">
+            <div class="container" style="max-width: 800px;">
+                <div class="text-center" style="margin-bottom: 48px;">
+                    <span style="color: #0ea5e9; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem; margin-bottom: 12px; display: block;">GOT QUESTIONS?</span>
+                    <h2 style="font-size: 3rem; font-weight: 800; color: #1e293b; margin-top: 0;">Frequently Asked Questions</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card card-hover-3d">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Is there a setup fee?</h3>
-                        <p>No, we do not charge any setup or recruitment fees. You only pay for the monthly service hours.</p>
+
+                <style>
+                    .faq-accordion {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                    }
+                    .faq-item {
+                        background: white;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+                        cursor: pointer;
+                    }
+                    .faq-item:hover {
+                        border-color: #0ea5e9;
+                        transform: translateY(-2px);
+                        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                    }
+                    .faq-item.active {
+                        border-color: #0ea5e9;
+                        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+                    }
+                    .faq-header {
+                        padding: 24px;
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        user-select: none;
+                    }
+                    .faq-icon-left {
+                        width: 32px;
+                        height: 32px;
+                        background: #0ea5e9;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        flex-shrink: 0;
+                    }
+                    .faq-question {
+                        flex: 1;
+                        font-size: 1.125rem;
+                        font-weight: 700;
+                        color: #1e293b;
+                        margin: 0;
+                    }
+                    .faq-toggle {
+                        width: 32px;
+                        height: 32px;
+                        background: #f0f9ff;
+                        color: #0ea5e9;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;
+                        flex-shrink: 0;
+                    }
+                    .faq-item.active .faq-toggle {
+                        background: #0ea5e9;
+                        color: white;
+                        transform: rotate(180deg);
+                    }
+                    .faq-content {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        padding: 0 24px;
+                        opacity: 0;
+                    }
+                    .faq-item.active .faq-content {
+                        max-height: 200px;
+                        padding-bottom: 24px;
+                        padding-left: 72px;
+                        opacity: 1;
+                    }
+                    .faq-answer {
+                        color: #64748b;
+                        line-height: 1.6;
+                        margin: 0;
+                        font-size: 1rem;
+                    }
+                </style>
+
+                <div class="faq-accordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <div class="faq-icon-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            </div>
+                            <h3 class="faq-question">What services do your virtual assistants provide?</h3>
+                            <div class="faq-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p class="faq-answer">Our virtual assistants handle admin support, inbox management, calendar scheduling, data entry, customer service, bookkeeping, and basic digital marketing tasks.</p>
+                        </div>
                     </div>
-                    <div class="card card-hover-3d">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">How do I track hours?</h3>
-                        <p>All virtual assistants use our proprietary dashboard for time tracking, which you can review in real-time.</p>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <div class="faq-icon-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            </div>
+                            <h3 class="faq-question">How does the billing and hour tracking work?</h3>
+                            <div class="faq-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p class="faq-answer">Hours are tracked through our proprietary dashboard. You are billed monthly in advance for your selected plan hours, which reset at the start of each billing cycle.</p>
+                        </div>
                     </div>
-                    <div class="card card-hover-3d">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">What is the notice period?</h3>
-                        <p>We work on a month-to-month basis. You can cancel or change your plan with a 30-day notice.</p>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <div class="faq-icon-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            </div>
+                            <h3 class="faq-question">Can I cancel or change my plan anytime?</h3>
+                            <div class="faq-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p class="faq-answer">Yes, we work on a month-to-month basis. You can upgrade, downgrade, or cancel your subscription with a simple 30-day notice through your account manager.</p>
+                        </div>
                     </div>
-                    <div class="card card-hover-3d">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Can I interview the VA?</h3>
-                        <p>Yes! For our Half-Time and Full-Time plans, we provide candidate profiles and facilitate intro calls.</p>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-header">
+                            <div class="faq-icon-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            </div>
+                            <h3 class="faq-question">How are candidates vetted and trained?</h3>
+                            <div class="faq-toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <p class="faq-answer">We hire only the top 2% of applicants through a rigorous 4-stage screening process. All VAs receive specialized training in security and premium business tools before being matched.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,6 +375,19 @@
     <script src="assets/js/footer.js" defer></script>
     <script src="assets/js/main.js"></script>
     <script>
+        function toggleFaq(item) {
+            // Close all other FAQ items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(i => {
+                if (i !== item && i.classList.contains('active')) {
+                    i.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            item.classList.toggle('active');
+        }
+
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -264,6 +405,3 @@
 </body>
 
 </html>
-
-
-
