@@ -1585,87 +1585,66 @@ html[dir="rtl"] .dashboard-layout {
 ════════════════════════════════════════════════════════ */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  /* ── Shared: make grid rows equal-height ── */
+  /* --- Shared: ensure grid items stretch to match row height --- */
   .grid.md\:grid-cols-3,
-  .grid.md\:grid-cols-2,
-  .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+  .grid.md\:grid-cols-2 {
     align-items: stretch;
   }
 
-  /* ── Home 1 & Services: .card-img-container images ──
-     Enforces a consistent, uniform height for all card images.
-     object-fit:cover is already set inline, this overrides any
-     height mismatches caused by varying image aspect ratios.     */
+  /* --- Home Page: 3 Feature Cards (768px – 1024px) --- */
   .card-img-container {
     width: 100% !important;
-    height: 200px !important;   /* uniform height for all tablet cards */
+    max-width: 280px !important;    /* prevent it from becoming too large */
+    aspect-ratio: 1 / 1 !important; /* enforce equal height and width (square) */
+    height: auto !important;        /* allow aspect-ratio to control height */
     overflow: hidden !important;
     border-radius: var(--radius-md) !important;
-    flex-shrink: 0;
+    margin: 0 auto 20px auto !important; /* central alignment with bottom spacing */
+    display: block !important;
   }
 
   .card-img-container img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center !important;
+    object-position: center !important; /* perfect centering */
     display: block !important;
   }
 
-  /* ── Home 1: 3-column grid card alignment ── */
-  .grid.md\:grid-cols-3 .card {
+  /* Ensure cards stay consistently aligned in the grid */
+  .card.card-hover-3d {
+    height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    height: 100% !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
   }
 
-  /* ── Services page: keep 2-col on tablet (md:grid-cols-2 + lg:grid-cols-3) ── */
+  /* Services page: maintain 2-col on tablet for better spacing */
   .grid.md\:grid-cols-2.lg\:grid-cols-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  /* Services card image height (slightly smaller than feature cards) */
+  /* Specialized/Services card image sizing */
   .grid.md\:grid-cols-2.lg\:grid-cols-3 .card-img-container {
-    height: 180px !important;
+    max-width: 240px !important;
   }
 
-  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    height: 100% !important;
-  }
-
-  /* ── About: Leadership profile images ──
-     Direct img inside overflow-hidden cards. Override inline height
-     to standardise across the 3 leader cards.                      */
+  /* --- About Page: Leadership Profiles (tablet-specific fix) --- */
   .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.overflow-hidden > img,
   .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.p-0.overflow-hidden > img {
     width: 100% !important;
-    height: 260px !important;   /* consistent profile photo height on tablet */
+    aspect-ratio: 4 / 5 !important; /* slightly portrait for profiles */
+    height: auto !important;
     object-fit: cover !important;
     object-position: center 10% !important;
-    display: block !important;
   }
 
-  /* Fallback selector for About leadership specifically
-     (uses grid-cols-1 md:grid-cols-2 lg:grid-cols-3)             */
-  .grid .card.p-0.overflow-hidden > img {
-    width: 100% !important;
-    height: 260px !important;
-    object-fit: cover !important;
-    object-position: center 10% !important;
-    display: block !important;
-  }
-
-  /* ── About Leadership: center the 3rd card on its own row ──
-     The grid is 2-col on tablet. Card 3 naturally wraps to row 2
-     left-aligned. Spanning both columns and using auto margins
-     centres it perfectly below the first two cards.              */
+  /* Center the 3rd leadership card if it wraps to its own row on tablet */
   .grid .card.p-0.overflow-hidden:nth-child(3) {
-    grid-column: 1 / -1;           /* span the full 2-column row  */
-    width: 50%;                    /* match the width of one card  */
+    grid-column: 1 / -1;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
   }
