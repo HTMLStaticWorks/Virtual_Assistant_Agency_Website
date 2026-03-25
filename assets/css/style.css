@@ -1577,3 +1577,96 @@ html[dir="rtl"] .dashboard-layout {
     margin: 0 !important;
   }
 }
+
+/* ════════════════════════════════════════════════════════
+   TABLET-ONLY IMAGE & CARD ALIGNMENT FIX  (768px – 1024px)
+   Targets: Home 1 cards, About Leadership cards, Services cards
+   Does NOT affect mobile (<768px) or desktop (>1024px)
+════════════════════════════════════════════════════════ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ── Shared: make grid rows equal-height ── */
+  .grid.md\:grid-cols-3,
+  .grid.md\:grid-cols-2,
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+    align-items: stretch;
+  }
+
+  /* ── Home 1 & Services: .card-img-container images ──
+     Enforces a consistent, uniform height for all card images.
+     object-fit:cover is already set inline, this overrides any
+     height mismatches caused by varying image aspect ratios.     */
+  .card-img-container {
+    width: 100% !important;
+    height: 200px !important;   /* uniform height for all tablet cards */
+    overflow: hidden !important;
+    border-radius: var(--radius-md) !important;
+    flex-shrink: 0;
+  }
+
+  .card-img-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  /* ── Home 1: 3-column grid card alignment ── */
+  .grid.md\:grid-cols-3 .card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+
+  /* ── Services page: keep 2-col on tablet (md:grid-cols-2 + lg:grid-cols-3) ── */
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Services card image height (slightly smaller than feature cards) */
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card-img-container {
+    height: 180px !important;
+  }
+
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+
+  /* ── About: Leadership profile images ──
+     Direct img inside overflow-hidden cards. Override inline height
+     to standardise across the 3 leader cards.                      */
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.overflow-hidden > img,
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.p-0.overflow-hidden > img {
+    width: 100% !important;
+    height: 260px !important;   /* consistent profile photo height on tablet */
+    object-fit: cover !important;
+    object-position: center 10% !important;
+    display: block !important;
+  }
+
+  /* Fallback selector for About leadership specifically
+     (uses grid-cols-1 md:grid-cols-2 lg:grid-cols-3)             */
+  .grid .card.p-0.overflow-hidden > img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    object-position: center 10% !important;
+    display: block !important;
+  }
+
+  /* ── About Leadership: center the 3rd card on its own row ──
+     The grid is 2-col on tablet. Card 3 naturally wraps to row 2
+     left-aligned. Spanning both columns and using auto margins
+     centres it perfectly below the first two cards.              */
+  .grid .card.p-0.overflow-hidden:nth-child(3) {
+    grid-column: 1 / -1;           /* span the full 2-column row  */
+    width: 50%;                    /* match the width of one card  */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
