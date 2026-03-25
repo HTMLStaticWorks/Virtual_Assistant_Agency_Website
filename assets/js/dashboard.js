@@ -100,7 +100,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (rtlToggle) {
-      // RTL toggle removed from UI
+      rtlToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+          const newDir = isRTL ? 'ltr' : 'rtl';
+          document.documentElement.setAttribute('dir', newDir);
+          if (newDir === 'rtl') {
+              document.body.classList.add('rtl-active');
+              localStorage.setItem('rtl', 'true');
+          } else {
+              document.body.classList.remove('rtl-active');
+              localStorage.setItem('rtl', 'false');
+          }
+          // Optional: page reload to ensure all absolute positioning/JS logic adapts
+          // window.location.reload(); 
+      });
   }
 
   // Add click events to links
