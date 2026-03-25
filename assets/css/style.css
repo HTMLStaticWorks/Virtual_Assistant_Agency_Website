@@ -578,6 +578,16 @@ html[dir="rtl"] .dashboard-layout {
   border-color: #ffffff !important;
 }
 
+@media (max-width: 480px) {
+  #cta-hire-va,
+  #cta-view-pricing {
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: center;
+    padding: 0.85rem 1rem !important;
+  }
+}
+
 /* 3D Card Hover Effect */
 .card-hover-3d {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -621,6 +631,8 @@ html[dir="rtl"] .dashboard-layout {
   overflow: visible;
   perspective: 1000px;
   transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -1410,6 +1422,17 @@ html[dir="rtl"] .dashboard-layout {
   flex-direction: row-reverse;
 }
 
+[dir="rtl"] .nav-actions {
+  margin-right: auto;
+  margin-left: 0 !important;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .nav-logo {
+  margin-right: 0 !important;
+  margin-left: auto;
+}
+
 [dir="rtl"] .footer-logo {
   flex-direction: row-reverse;
   gap: 12px;
@@ -1507,8 +1530,12 @@ html[dir="rtl"] .dashboard-layout {
 
   /* Specific fix for toggle alignment */
   .nav-actions {
-    justify-content: center !important;
+    justify-content: flex-end !important;
     align-self: center !important;
+  }
+
+  [dir="rtl"] .nav-actions {
+    justify-content: flex-start !important;
   }
 
   #rtl-toggle, #theme-toggle, .mobile-menu-btn {

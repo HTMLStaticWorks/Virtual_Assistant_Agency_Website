@@ -172,6 +172,16 @@
             border-left: 1px solid var(--border-color);
         }
 
+        [dir="rtl"] .topbar {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .topbar .flex.items-center.gap-4 {
+            margin-right: auto;
+            margin-left: initial;
+            flex-direction: row-reverse;
+        }
+
         @media (max-width: 1024px) {
             [dir="rtl"] .sidebar {
                 transform: translateX(100%);

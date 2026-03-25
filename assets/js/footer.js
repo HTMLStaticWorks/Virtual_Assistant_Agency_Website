@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <polyline points="2 17 12 22 22 17" />
                         <polyline points="2 12 12 17 22 12" />
                     </svg>
-                    <span class="logo-text">Virtual Assistant Agency</span>
+                    <span class="logo-text">Virtual Assistant</span>
                 </a>
                 <p class="footer-desc">
                     Premium virtual assistant services for the modern entrepreneur. We believe in quality, efficiency, and excellence.
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <!-- Bottom Bar -->
         <div class="footer-bottom-reference">
-            <p>&copy; 2026 Virtual Assistant Agency All rights reserved.</p>
+            <p>&copy; 2026 Virtual Assistant All rights reserved.</p>
         </div>
     </div>
     

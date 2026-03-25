@@ -213,6 +213,14 @@
             border-right: none;
             border-left: 1px solid var(--border-color);
         }
+        [dir="rtl"] .topbar {
+            flex-direction: row-reverse;
+        }
+        [dir="rtl"] .topbar-left {
+            margin-right: auto;
+            margin-left: initial;
+            flex-direction: row-reverse;
+        }
         [dir="rtl"] .sidebar-toggle { margin-right: 0; margin-left: 1rem; }
         [dir="rtl"] .sidebar-link svg { margin-right: 0; margin-left: 12px; }
         [dir="rtl"] .sidebar-link.active::after { right: auto; left: 0; }
