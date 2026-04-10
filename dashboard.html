@@ -38,6 +38,7 @@
         body.rtl-active .dashboard-layout {
             direction: rtl;
         }
+
         body.rtl-active .sidebar {
             border-right: none;
             border-left: 1px solid var(--border-color);
@@ -96,15 +97,59 @@
 
         /* ─── TOPBAR ────────────────────────────────────────────────── */
         .topbar {
-            height: 4.5rem;
+            padding: 20px 30px;
             background-color: var(--bg-color);
             border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 var(--space-4);
             z-index: 30;
-            flex-wrap: nowrap; /* never wrap topbar items */
+            flex-wrap: nowrap;
+            /* never wrap topbar items */
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-toggles {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .welcome-msg {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .header-toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-md);
+            background-color: var(--surface-hover);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .header-toggle-btn:hover {
+            color: var(--primary-color);
+            background-color: var(--primary-light);
         }
 
         .topbar-left {
@@ -133,13 +178,20 @@
         .tab-content {
             display: none;
         }
+
         .tab-content.active {
             display: block;
             animation: fadeIn 0.3s ease;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* ─── SKELETON ──────────────────────────────────────────────── */
@@ -149,12 +201,32 @@
             animation: loading 1.5s infinite;
             border-radius: var(--radius-md);
         }
-        .skeleton-text  { height: 20px;  margin-bottom: 8px;  width: 100%; }
-        .skeleton-title { height: 32px;  margin-bottom: 16px; width: 40%; }
-        .skeleton-card  { height: 120px; width: 100%; }
+
+        .skeleton-text {
+            height: 20px;
+            margin-bottom: 8px;
+            width: 100%;
+        }
+
+        .skeleton-title {
+            height: 32px;
+            margin-bottom: 16px;
+            width: 40%;
+        }
+
+        .skeleton-card {
+            height: 120px;
+            width: 100%;
+        }
+
         @keyframes loading {
-            0%   { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
         }
 
         /* ─── SIDEBAR OVERLAY ───────────────────────────────────────── */
@@ -162,7 +234,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 35;
         }
 
@@ -183,18 +255,40 @@
             font-weight: 600;
             display: inline-block;
         }
-        .status-pending   { background-color: var(--warning); color: #fff; }
-        .status-progress  { background-color: var(--info);    color: #fff; }
-        .status-completed { background-color: var(--success); color: #fff; }
+
+        .status-pending {
+            background-color: var(--warning);
+            color: #fff;
+        }
+
+        .status-progress {
+            background-color: var(--info);
+            color: #fff;
+        }
+
+        .status-completed {
+            background-color: var(--success);
+            color: #fff;
+        }
 
         /* ─── TABLES ─────────────────────────────────────────────────── */
-        table { width: 100%; border-collapse: collapse; }
-        th, td {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
             padding: 12px 16px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
-        th { font-weight: 600; color: var(--text-secondary); font-size: 0.875rem; }
+
+        th {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
 
         .table-responsive {
             width: 100%;
@@ -204,64 +298,101 @@
         }
 
         /* ─── DROPDOWN ───────────────────────────────────────────────── */
-        .dropdown-item { transition: background-color 0.2s; }
-        .dropdown-item:hover { background-color: var(--surface-hover); }
+        .dropdown-item {
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--surface-hover);
+        }
 
         /* ─── RTL DASHBOARD FIXES ────────────────────────────────────── */
         [dir="rtl"] .sidebar {
-            left: auto; right: 0;
+            left: auto;
+            right: 0;
             border-right: none;
             border-left: 1px solid var(--border-color);
         }
+
         .topbar-left {
             display: flex !important;
             flex-direction: row !important;
             align-items: center !important;
             gap: 12px !important;
         }
+
         .mobile-menu-btn {
             order: -1 !important;
         }
+
         #pageTitle {
             order: 1 !important;
         }
+
         [dir="rtl"] .topbar-left {
-            flex-direction: row !important; /* Keep order L-to-R for button then title */
-            margin-right: auto;
-            margin-left: initial;
+            flex-direction: row !important;
+            /* Keep order L-to-R for button then title */
         }
-        [dir="rtl"] .sidebar-toggle { margin-right: 0; margin-left: 1rem; }
-        [dir="rtl"] .sidebar-link svg { margin-right: 0; margin-left: 12px; }
-        [dir="rtl"] .sidebar-link.active::after { right: auto; left: 0; }
+
+        [dir="rtl"] .sidebar-toggle {
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+
+        [dir="rtl"] .sidebar-link svg {
+            margin-right: 0;
+            margin-left: 12px;
+        }
+
+        [dir="rtl"] .sidebar-link.active::after {
+            right: auto;
+            left: 0;
+        }
 
         /* ─── LAPTOP (≥1024px) ───────────────────────────────────────── */
         @media (min-width: 1024px) {
-            .lg-span-2 { grid-column: span 2; }
-            .mobile-menu-btn { display: none !important; }
+            .lg-span-2 {
+                grid-column: span 2;
+            }
+
+            .mobile-menu-btn {
+                display: none !important;
+            }
         }
 
         /* ─── TABLET (<1024px) ───────────────────────────────────────── */
         @media (max-width: 1023px) {
+
             /* Sidebar becomes a slide-in drawer */
             .sidebar {
                 position: fixed;
-                top: 0; bottom: 0; left: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
                 transform: translateX(-100%);
             }
+
             .sidebar.open {
                 transform: translateX(0);
             }
+
             .sidebar-overlay.open {
                 display: block;
             }
+
             [dir="rtl"] .sidebar {
-                left: auto; right: 0;
+                left: auto;
+                right: 0;
                 transform: translateX(100%);
             }
+
             [dir="rtl"] .sidebar.open {
                 transform: translateX(0);
             }
-            [dir="rtl"] .main-content { margin-right: 0; }
+
+            [dir="rtl"] .main-content {
+                margin-right: 0;
+            }
 
             /* Hamburger always visible on tablet/mobile */
             .mobile-menu-btn {
@@ -276,7 +407,9 @@
                 flex-shrink: 0;
             }
 
-            .topbar { padding: 0 var(--space-3); }
+            .topbar {
+                padding: 15px var(--space-3);
+            }
 
             /* Tablet stat grid: 2 columns */
             .dash-stats-grid {
@@ -286,21 +419,30 @@
 
         /* ─── MOBILE (≤640px) ────────────────────────────────────────── */
         @media (max-width: 640px) {
-            .topbar { padding: 0 12px; }
-            .page-content { padding: var(--space-3) 12px; }
+            .topbar {
+                padding: 12px;
+            }
 
-            #pageTitle { font-size: 1rem; }
+            .page-content {
+                padding: var(--space-3) 12px;
+            }
+
+            #pageTitle {
+                font-size: 1rem;
+            }
 
             /* Tab header: stack vertically */
             .tab-header {
                 flex-direction: column;
                 align-items: stretch;
             }
+
             .tab-header .flex {
                 flex-direction: column;
                 width: 100%;
                 gap: var(--space-2);
             }
+
             .tab-header input,
             .tab-header select,
             .tab-header .btn {
@@ -310,13 +452,48 @@
         }
 
         /* ─── MOBILE 445px ───────────────────────────────────────────── */
+        /* ─── MOBILE 480px & 320px ───────────────────────────────────── */
         @media (max-width: 480px) {
-            .topbar {
-                padding: 0 8px;
-                height: 56px;
+            .header-profile span {
+                display: none; /* Hide 'Jane Doe' text to save space on small mobiles */
             }
-            .topbar-left { gap: 8px; }
-            #pageTitle { font-size: 0.9rem; }
+
+            .header-profile {
+                gap: 0;
+            }
+
+            .topbar {
+                padding: 10px 12px;
+                height: auto;
+                min-height: 56px;
+                gap: 8px;
+            }
+
+            .topbar-right {
+                gap: 10px;
+            }
+
+            .header-toggles {
+                gap: 6px;
+            }
+
+            .header-toggle-btn {
+                width: 32px;
+                height: 32px;
+            }
+
+            .topbar-left {
+                gap: 8px !important;
+                flex: 1;
+                min-width: 0;
+            }
+
+            #pageTitle {
+                font-size: 0.95rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
 
             /* Stat cards: 1 column */
             .dash-stats-grid {
@@ -328,10 +505,14 @@
                 grid-template-columns: 1fr !important;
             }
 
-            .page-content { padding: 12px 8px; }
+            .page-content {
+                padding: 12px 8px;
+            }
 
             /* Cards slightly less padding */
-            .card { padding: var(--space-3) !important; }
+            .card {
+                padding: var(--space-3) !important;
+            }
 
             /* Billing grid: 1 col */
             .billing-top-grid {
@@ -357,12 +538,16 @@
                     </svg> Virtual Assistant
                 </a>
             </div>
-            <div style="padding: 24px var(--space-4); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px; background-color: var(--surface-hover);">
-                <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">
+            <div
+                style="padding: 24px var(--space-4); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px; background-color: var(--surface-hover);">
+                <div
+                    style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; flex-shrink: 0;">
                     JD
                 </div>
                 <div style="overflow: hidden;">
-                    <div style="font-weight: 600; font-size: 0.95rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Jane Doe</div>
+                    <div
+                        style="font-weight: 600; font-size: 0.95rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        Jane Doe</div>
                     <div style="font-size: 0.75rem; color: var(--text-tertiary);">Client Profile</div>
                 </div>
             </div>
@@ -415,26 +600,6 @@
                     </svg>
                     Settings
                 </a>
-
-
-                <div style="padding: 16px var(--space-3) 8px; font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; border-top: 1px solid var(--border-color); margin-top: 8px;">
-                    Appearance
-                </div>
-                <div style="display: flex; gap: 0; border-top: 1px solid var(--border-color); margin-top: 8px;">
-                    <a href="#" id="theme-toggle" class="sidebar-link" style="flex: 1; border: none; padding-right: 8px; justify-content: center; font-size: 0.8rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        </svg>
-                        <span style="margin-right: 0;">Theme</span>
-                    </a>
-                    <a href="#" id="rtl-toggle" class="sidebar-link" style="flex: 1; border: none; border-left: 1px solid var(--border-color); padding-left: 8px; justify-content: center; font-size: 0.8rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 5H4V19H20V5Z"/><path d="M8 9H16"/><path d="M8 12H16"/><path d="M8 15H12"/>
-                        </svg>
-                        <span style="margin-right: 0;">RTL</span>
-                    </a>
-                </div>
             </nav>
             <div style="padding: var(--space-4);">
                 <a href="index.html" class="btn btn-secondary"
@@ -457,7 +622,31 @@
                     </button>
                     <h2 id="pageTitle" style="margin: 0; font-size: 1.25rem;">Overview</h2>
                 </div>
-                <!-- Header Links Removed to Sidebar -->
+                <div class="topbar-right">
+                    <div class="header-toggles">
+                        <button id="theme-toggle-header" class="header-toggle-btn" title="Toggle Theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </button>
+                        <button id="rtl-toggle-header" class="header-toggle-btn" title="Toggle RTL">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 5H4V19H20V5Z" />
+                                <path d="M8 9H16" />
+                                <path d="M8 12H16" />
+                                <path d="M8 15H12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="header-profile">
+                        <span style="font-weight: 500; font-size: 0.95rem; color: var(--text-primary);">Jane Doe</span>
+                        <div
+                            style="width: 36px; height: 36px; border-radius: 50%; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem;">
+                            JD</div>
+                    </div>
+                </div>
             </header>
 
             <!-- Page Content Views -->
@@ -476,7 +665,9 @@
 
                 <!-- OVERVIEW TAB -->
                 <div id="overview" class="tab-content active">
-                    <div class="dash-stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" style="margin-bottom: 32px;">
+                    <h2 class="welcome-msg">Welcome back, Jane Doe 👋</h2>
+                    <div class="dash-stats-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                        style="margin-bottom: 32px;">
 
                         <div class="card flex flex-col justify-center">
                             <span style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 8px;">Total
@@ -742,52 +933,52 @@
                         </div>
                     </div>
 
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Invoice ID</th>
-                                        <th>Date</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                        <th>Download</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>INV-2024-010</td>
-                                        <td>Oct 1, 2024</td>
-                                        <td>$1,600.00</td>
-                                        <td><span class="status status-completed">Paid</span></td>
-                                        <td><button class="btn"
-                                                style="padding: 4px; color: var(--primary-color); background: none;"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                                    <polyline points="7 10 12 15 17 10" />
-                                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                                </svg></button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>INV-2024-009</td>
-                                        <td>Sep 1, 2024</td>
-                                        <td>$1,600.00</td>
-                                        <td><span class="status status-completed">Paid</span></td>
-                                        <td><button class="btn"
-                                                style="padding: 4px; color: var(--primary-color); background: none;"><svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                                    <polyline points="7 10 12 15 17 10" />
-                                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                                </svg></button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Download</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV-2024-010</td>
+                                    <td>Oct 1, 2024</td>
+                                    <td>$1,600.00</td>
+                                    <td><span class="status status-completed">Paid</span></td>
+                                    <td><button class="btn"
+                                            style="padding: 4px; color: var(--primary-color); background: none;"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                <polyline points="7 10 12 15 17 10" />
+                                                <line x1="12" y1="15" x2="12" y2="3" />
+                                            </svg></button></td>
+                                </tr>
+                                <tr>
+                                    <td>INV-2024-009</td>
+                                    <td>Sep 1, 2024</td>
+                                    <td>$1,600.00</td>
+                                    <td><span class="status status-completed">Paid</span></td>
+                                    <td><button class="btn"
+                                            style="padding: 4px; color: var(--primary-color); background: none;"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                                <polyline points="7 10 12 15 17 10" />
+                                                <line x1="12" y1="15" x2="12" y2="3" />
+                                            </svg></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
 
                 <!-- SETTINGS TAB -->
                 <div id="settings" class="tab-content">
@@ -826,11 +1017,13 @@
                 </div>
 
             </div> <!-- End Page Content -->
-            </main>
-        </div>
+        </main>
+    </div>
     </div>
 
     <script src="assets/js/dashboard.js"></script>
 </body>
+
+</html>
 
 </html>

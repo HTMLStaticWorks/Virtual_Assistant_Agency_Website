@@ -23,7 +23,7 @@
 <body>
 
     <!-- Header / Navbar -->
-        <header class="navbar">
+    <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -42,8 +42,8 @@
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 <a href="dashboard.html" class="mobile-only">Dashboard</a>
-                <a href="login.html" class="mobile-only">Login</a>
-                <a href="signup.html" class="btn btn-primary mobile-only" style="margin-top: 1rem; text-align: center; color: white !important;">Hire a VA</a>
+                <a href="signup.html" class="btn btn-primary mobile-only"
+                    style="margin-top: 1rem; text-align: center; color: white !important;">Hire a VA</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -55,9 +55,8 @@
             </button>
 
             <div class="nav-actions">
-                
+
                 <a href="dashboard.html" class="btn btn-secondary btn-nav-dashboard" title="Dashboard">Dashboard</a>
-                <a href="login.html" class="btn btn-secondary">Login</a>
                 <button id="rtl-toggle" class="btn btn-secondary" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR">
                     <span style="font-size: 0.75rem; font-weight: 700;">RTL</span>
                 </button>
@@ -95,33 +94,48 @@
                     <h2>How our assistants can help</h2>
                     <p>Entrust repetitive tasks to our Virtual Assistant Agency.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     <!-- Feature Card 1 -->
-                    <div class="card card-hover-3d flex flex-col items-center text-center reveal" style="padding: 2.5rem 1.5rem;">
-                        <div class="card-img-container" style="margin-bottom: 20px; width: 100%; height: 200px; overflow: hidden; border-radius: var(--radius-md);">
-                            <img src="assets/images/admin_scheduling.png" alt="Admin & Scheduling" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card card-hover-3d flex flex-col items-center text-center reveal"
+                        style="padding: 0 !important; overflow: hidden; width: 100%;">
+                        <div class="card-img-container"
+                            style="width: 100% !important; height: 240px !important; overflow: hidden; border-radius: 12px 12px 0 0;">
+                            <img src="assets/images/admin_scheduling.png" alt="Admin & Scheduling"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center;">
                         </div>
-                        <h3>Admin & Scheduling</h3>
-                        <p>Inbox routing, calendar management, and meeting scheduling handled seamlessly without your
-                            intervention.</p>
+                        <div style="padding: 1.5rem 1.5rem 2.5rem;">
+                            <h3 style="margin-top: 0;">Admin & Scheduling</h3>
+                            <p style="margin-bottom: 0;">Inbox routing, calendar management, and meeting scheduling handled seamlessly without your
+                                intervention.</p>
+                        </div>
                     </div>
                     <!-- Feature Card 2 -->
-                    <div class="card card-hover-3d flex flex-col items-center text-center reveal" style="padding: 2.5rem 1.5rem;">
-                        <div class="card-img-container" style="margin-bottom: 20px; width: 100%; height: 200px; overflow: hidden; border-radius: var(--radius-md);">
-                            <img src="assets/images/data_entry.png" alt="Data Entry" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card card-hover-3d flex flex-col items-center text-center reveal"
+                        style="padding: 0 !important; overflow: hidden; width: 100%;">
+                        <div class="card-img-container"
+                            style="width: 100% !important; height: 240px !important; overflow: hidden; border-radius: 12px 12px 0 0;">
+                            <img src="assets/images/data_entry.png" alt="Data Entry"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center;">
                         </div>
-                        <h3>Data Entry</h3>
-                        <p>Accurate and fast CRM management, data organization, and spreadsheet tracking for your daily
-                            operations.</p>
+                        <div style="padding: 1.5rem 1.5rem 2.5rem;">
+                            <h3 style="margin-top: 0;">Data Entry</h3>
+                            <p style="margin-bottom: 0;">Accurate and fast CRM management, data organization, and spreadsheet tracking for your daily
+                                operations.</p>
+                        </div>
                     </div>
                     <!-- Feature Card 3 -->
-                    <div class="card card-hover-3d flex flex-col items-center text-center reveal" style="padding: 2.5rem 1.5rem;">
-                        <div class="card-img-container" style="margin-bottom: 20px; width: 100%; height: 200px; overflow: hidden; border-radius: var(--radius-md);">
-                            <img src="assets/images/customer_support.png" alt="Customer Support" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card card-hover-3d flex flex-col items-center text-center reveal"
+                        style="padding: 0 !important; overflow: hidden; width: 100%;">
+                        <div class="card-img-container"
+                            style="width: 100% !important; height: 240px !important; overflow: hidden; border-radius: 12px 12px 0 0;">
+                            <img src="assets/images/customer_support.png" alt="Customer Support"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center;">
                         </div>
-                        <h3>Customer Support</h3>
-                        <p>Respond to customer inquiries faster over email, live chat, or social media with our
-                            empathetic agents.</p>
+                        <div style="padding: 1.5rem 1.5rem 2.5rem;">
+                            <h3 style="margin-top: 0;">Customer Support</h3>
+                            <p style="margin-bottom: 0;">Respond to customer inquiries faster over email, live chat, or social media with our
+                                empathetic agents.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -301,11 +315,36 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="card card-hover-3d text-center" style="border: none;">
                         <div class="flex justify-center gap-1" style="color: #FFB800; margin-bottom: 16px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
                         </div>
                         <p
                             style="font-size: 1.125rem; font-style: italic; color: var(--text-primary); margin-bottom: 24px; text-align: center;">
@@ -327,11 +366,36 @@
                     </div>
                     <div class="card card-hover-3d text-center" style="border: none;">
                         <div class="flex justify-center gap-1" style="color: #FFB800; margin-bottom: 16px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
                         </div>
                         <p
                             style="font-size: 1.125rem; font-style: italic; color: var(--text-primary); margin-bottom: 24px; text-align: center;">
@@ -345,14 +409,16 @@
                                 <div style="color: var(--text-primary); font-size: 0.95rem;">
                                     <strong style="font-weight: 700;">Sarah Jenkins</strong>
                                     <span style="color: var(--text-tertiary); margin: 0 4px;">•</span>
-                                    <span style="font-size: 0.8rem; color: var(--text-tertiary);">Founder, Bloom Design</span>
+                                    <span style="font-size: 0.8rem; color: var(--text-tertiary);">Founder, Bloom
+                                        Design</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 48px;">
-                    <h2 style="font-size: 1.5rem; color: var(--text-secondary); opacity: 0.8;">Trusted by Founders & Teams</h2>
+                    <h2 style="font-size: 1.5rem; color: var(--text-secondary); opacity: 0.8;">Trusted by Founders &
+                        Teams</h2>
                 </div>
             </div>
         </section>
@@ -393,19 +459,19 @@
                     .sa-card {
                         display: flex;
                         flex-direction: column;
-                        gap: 0.6rem;
+                        gap: 0;
                         padding: 0;
-                        overflow: visible;
+                        overflow: hidden;
                     }
 
                     .sa-card-img {
                         width: 100%;
-                        height: 180px;
+                        height: 200px;
                         object-fit: cover;
-                        object-position: center 15%;
+                        object-position: center;
                         /* Show more of the heads */
                         display: block;
-                        border-radius: 0;
+                        border-radius: 12px 12px 0 0;
                         flex-shrink: 0;
                     }
 
@@ -668,8 +734,7 @@
                         style="color: rgba(255, 255, 255, 0.9); font-size: 1.125rem; max-width: 600px; margin: 0 auto 32px;">
                         Join hundreds of businesses that use Virtual Assistant Agency to scale their operations
                         efficiently.</p>
-                    <div class="cta-button-group flex justify-center gap-4 flex-wrap"
-                        style="position: relative;">
+                    <div class="cta-button-group flex justify-center gap-4 flex-wrap" style="position: relative;">
                         <a id="cta-hire-va" href="signup.html?v=3" class="btn btn-cta-white">Hire a Virtual
                             Assistant</a>
                         <a id="cta-view-pricing" href="pricing.html?v=3" class="btn btn-cta-outline">View Pricing</a>

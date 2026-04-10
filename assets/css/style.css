@@ -154,31 +154,36 @@ p {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  flex-wrap: nowrap !important; /* Fixed: Prevent wrapping to maintain single line header */
+  flex-wrap: nowrap !important;
+  /* Fixed: Prevent wrapping to maintain single line header */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-4); /* Removed vertical padding to use height */
-  height: 4.5rem; /* Ensure consistent height */
+  padding: 0 var(--space-4);
+  /* Removed vertical padding to use height */
+  height: 4.5rem;
+  /* Ensure consistent height */
   gap: 1rem;
 }
 
 /* --- DASHBOARD RTL LAYOUT --- */
 .dashboard-layout {
   display: flex !important;
-  flex-direction: row !important; /* Sidebar LEFT by default */
+  flex-direction: row !important;
+  /* Sidebar LEFT by default */
   min-height: 100vh;
   transition: flex-direction 0.3s ease;
 }
 
-body.rtl-active, 
+body.rtl-active,
 html[dir="rtl"] body {
   direction: rtl;
 }
 
 body.rtl-active .dashboard-layout,
 html[dir="rtl"] .dashboard-layout {
-  flex-direction: row !important; /* Dir:rtl naturally puts first item (sidebar) on Right */
+  flex-direction: row !important;
+  /* Dir:rtl naturally puts first item (sidebar) on Right */
 }
 
 .nav-container::-webkit-scrollbar {
@@ -191,7 +196,8 @@ html[dir="rtl"] .dashboard-layout {
   align-items: center;
   flex-wrap: nowrap;
   gap: var(--space-1);
-  flex: 0 1 auto; /* Don't force growth that pushes actions out */
+  flex: 0 1 auto;
+  /* Don't force growth that pushes actions out */
 }
 
 .nav-actions {
@@ -211,7 +217,7 @@ html[dir="rtl"] .dashboard-layout {
   flex: 0 0 auto;
 }
 
-.nav-actions button, 
+.nav-actions button,
 .nav-actions .btn {
   height: 42px;
   display: flex;
@@ -220,7 +226,8 @@ html[dir="rtl"] .dashboard-layout {
 }
 
 .btn-nav-dashboard {
-  background-color: rgba(37, 99, 235, 0.05) !important; /* light tint using primary */
+  background-color: rgba(37, 99, 235, 0.05) !important;
+  /* light tint using primary */
   border-color: var(--primary-color) !important;
   color: var(--primary-color) !important;
 }
@@ -233,7 +240,8 @@ html[dir="rtl"] .dashboard-layout {
   justify-content: flex-end;
 }
 
-#rtl-toggle {
+#rtl-toggle,
+#theme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,12 +257,14 @@ html[dir="rtl"] .dashboard-layout {
   font-family: inherit;
 }
 
-[data-theme="dark"] #rtl-toggle {
+[data-theme="dark"] #rtl-toggle,
+[data-theme="dark"] #theme-toggle {
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
-#rtl-toggle:hover {
+#rtl-toggle:hover,
+#theme-toggle:hover {
   background: var(--primary-light);
   color: var(--primary-color);
 }
@@ -410,6 +420,7 @@ html[dir="rtl"] .dashboard-layout {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -419,6 +430,7 @@ html[dir="rtl"] .dashboard-layout {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -596,6 +608,7 @@ html[dir="rtl"] .dashboard-layout {
 }
 
 @media (max-width: 480px) {
+
   #cta-hire-va,
   #cta-view-pricing,
   .cta-button-group .btn {
@@ -611,10 +624,12 @@ html[dir="rtl"] .dashboard-layout {
 /* 3D Card Hover Effect */
 .card-hover-3d {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .card-hover-3d:hover {
-  transform: translateY(-15px) rotateX(4deg) rotateY(4deg) !important;
+  transform: translateY(-15px) scale(1.02) !important;
   box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -649,15 +664,15 @@ html[dir="rtl"] .dashboard-layout {
   border: 1px solid var(--border-color);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
   overflow: visible;
-  perspective: 1000px;
-  transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .card:hover {
   border-color: var(--primary-color);
-  transform: translateY(-8px) rotateX(4deg) rotateY(-2deg) scale(1.02);
+  transform: translateY(-8px) scale(1.02);
   z-index: 10;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
@@ -856,6 +871,7 @@ html[dir="rtl"] .dashboard-layout {
   .nav-links {
     gap: 1rem;
   }
+
   .nav-actions {
     gap: 0.5rem;
   }
@@ -909,8 +925,15 @@ html[dir="rtl"] .dashboard-layout {
   }
 
   @keyframes menuSlideDown {
-    from { opacity: 0; transform: translateY(-8px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .nav-links a {
@@ -935,10 +958,12 @@ html[dir="rtl"] .dashboard-layout {
   .nav-actions .btn-nav-dashboard {
     display: none !important;
   }
+
   .nav-actions .btn-primary {
     display: none !important;
   }
-  .nav-actions > a.btn-secondary:not(#rtl-toggle) {
+
+  .nav-actions>a.btn-secondary:not(#rtl-toggle) {
     display: none !important;
   }
 }
@@ -950,8 +975,13 @@ html[dir="rtl"] .dashboard-layout {
     --space-8: 3rem;
   }
 
-  h1 { font-size: 2rem !important; }
-  h2 { font-size: 1.75rem !important; }
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
 
   .container {
     padding: 0 1rem !important;
@@ -994,9 +1024,11 @@ html[dir="rtl"] .dashboard-layout {
   .page-header {
     padding: 6rem 1rem 3rem;
   }
+
   .page-header h1 {
     font-size: 2rem !important;
   }
+
   .page-header p {
     font-size: 1rem !important;
   }
@@ -1045,7 +1077,9 @@ html[dir="rtl"] .dashboard-layout {
 
 /* ─── SMALL PHONE (≤ 480px) ─── */
 @media (max-width: 480px) {
-  h1 { font-size: 1.75rem !important; }
+  h1 {
+    font-size: 1.75rem !important;
+  }
 
   .container {
     padding: 0 0.75rem !important;
@@ -1069,6 +1103,7 @@ html[dir="rtl"] .dashboard-layout {
   .page-header {
     padding: 5.5rem 0.75rem 2.5rem;
   }
+
   .page-header h1 {
     font-size: 1.6rem !important;
   }
@@ -1359,9 +1394,11 @@ html[dir="rtl"] .dashboard-layout {
   .page-header {
     padding: 6rem 1rem 3rem;
   }
+
   .page-header h1 {
     font-size: 2rem !important;
   }
+
   .page-header p {
     font-size: 1rem !important;
   }
@@ -1371,6 +1408,7 @@ html[dir="rtl"] .dashboard-layout {
   .page-header {
     padding: 5.5rem 1rem 2.5rem;
   }
+
   .page-header h1 {
     font-size: 1.6rem !important;
   }
@@ -1487,7 +1525,7 @@ html[dir="rtl"] .dashboard-layout {
   }
 
   /* Only collapse public-page grids, NOT dashboard grids */
-  .section .grid:not([class*="sm:"]){
+  .section .grid:not([class*="sm:"]) {
     grid-template-columns: 1fr !important;
     gap: var(--space-4) !important;
   }
@@ -1535,14 +1573,15 @@ html[dir="rtl"] .dashboard-layout {
     justify-content: space-between !important;
   }
 
-  .nav-logo, 
-  .nav-actions, 
+  .nav-logo,
+  .nav-actions,
   .mobile-menu-btn {
     margin: 0 !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
-    height: 72px !important; /* Full header height */
+    height: 72px !important;
+    /* Full header height */
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -1558,8 +1597,10 @@ html[dir="rtl"] .dashboard-layout {
     justify-content: flex-start !important;
   }
 
-  #rtl-toggle, #theme-toggle, .mobile-menu-btn {
-    height: 42px !important; 
+  #rtl-toggle,
+  #theme-toggle,
+  .mobile-menu-btn {
+    height: 42px !important;
     width: auto;
     min-width: 40px;
     display: flex !important;
@@ -1567,10 +1608,11 @@ html[dir="rtl"] .dashboard-layout {
     justify-content: center !important;
     margin: 0 !important;
     border: none !important;
-    align-self: center !important; /* Force self-centering */
+    align-self: center !important;
+    /* Force self-centering */
   }
 
-  .nav-logo img, 
+  .nav-logo img,
   .nav-logo svg,
   .mobile-menu-btn svg {
     align-self: center !important;
@@ -1594,12 +1636,13 @@ html[dir="rtl"] .dashboard-layout {
   /* --- Home Page: 3 Feature Cards (768px – 1024px) --- */
   .card-img-container {
     width: 100% !important;
-    max-width: 280px !important;    /* prevent it from becoming too large */
-    aspect-ratio: 1 / 1 !important; /* enforce equal height and width (square) */
-    height: auto !important;        /* allow aspect-ratio to control height */
+    max-width: 100% !important;
+    /* removed 280px restriction to allow edge-to-edge fit on 2-col tablet layouts */
+    aspect-ratio: auto !important;
+    /* allow heights or natural ratios to control the fit */
     overflow: hidden !important;
     border-radius: var(--radius-md) !important;
-    margin: 0 auto 20px auto !important; /* central alignment with bottom spacing */
+    margin: 0 auto 20px auto !important;
     display: block !important;
   }
 
@@ -1607,7 +1650,8 @@ html[dir="rtl"] .dashboard-layout {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center !important; /* perfect centering */
+    object-position: center !important;
+    /* perfect centering */
     display: block !important;
   }
 
@@ -1626,16 +1670,17 @@ html[dir="rtl"] .dashboard-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  /* Specialized/Services card image sizing */
+  /* Specialized/Services card image sizing - removed 240px cap to fix gaps */
   .grid.md\:grid-cols-2.lg\:grid-cols-3 .card-img-container {
-    max-width: 240px !important;
+    max-width: 100% !important;
   }
 
   /* --- About Page: Leadership Profiles (tablet-specific fix) --- */
-  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.overflow-hidden > img,
-  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.p-0.overflow-hidden > img {
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.overflow-hidden>img,
+  .grid.md\:grid-cols-2.lg\:grid-cols-3 .card.p-0.overflow-hidden>img {
     width: 100% !important;
-    aspect-ratio: 4 / 5 !important; /* slightly portrait for profiles */
+    aspect-ratio: 4 / 5 !important;
+    /* slightly portrait for profiles */
     height: auto !important;
     object-fit: cover !important;
     object-position: center 10% !important;
@@ -1648,4 +1693,40 @@ html[dir="rtl"] .dashboard-layout {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* --- GLOBAL IMAGE & CARD OVERFLOW FIX --- */
+.card-img-container,
+.sa-card,
+.card-hover-3d {
+  overflow: hidden !important;
+  /* Fixes Safari/Chrome bug where overflow: hidden fails during 3D hover transforms */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-img-container img,
+.card-hover-3d img {
+  width: 100% !important;
+  max-width: 100%;
+  object-fit: cover !important;
+  /* Prevent zoom shift on hover */
+  transform: none !important;
+  transition: none !important;
+}
+
+/* For image containers specifically using height 100% */
+.card-img-container img {
+  height: 100% !important;
+}
+
+/* Ensure sa-card-img respects flex shrink and keeps its fixed height */
+.sa-card-img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  flex-shrink: 0;
 }

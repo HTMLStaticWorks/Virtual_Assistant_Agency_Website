@@ -66,14 +66,17 @@
         }
         .contact-info-value a:hover { text-decoration: underline; }
 
-        /* ── 3D Form Card ── */
-        .card-3d-wrapper { perspective: 1000px; }
+        /* ── Form Card ── */
+        .card-3d-wrapper {  }
         .card-3d {
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-            transform-style: preserve-3d;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            backface-visibility: hidden;
             will-change: transform;
         }
-        .card-3d:hover { box-shadow: 0 24px 60px rgba(0,0,0,0.18); }
+        .card-3d:hover { 
+            box-shadow: 0 24px 60px rgba(0,0,0,0.18); 
+            transform: translateY(-10px) scale(1.02);
+        }
         .card-3d.reset {
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease;
         }
@@ -120,7 +123,6 @@
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
                 <a href="dashboard.html" class="mobile-only">Dashboard</a>
-                <a href="login.html" class="mobile-only">Login</a>
                 <a href="signup.html" class="btn btn-primary mobile-only" style="margin-top: 1rem; text-align: center; color: white !important;">Hire a VA</a>
             </nav>
             <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
@@ -134,7 +136,6 @@
 
             <div class="nav-actions">
                 <a href="dashboard.html" class="btn btn-secondary btn-nav-dashboard" title="Dashboard">Dashboard</a>
-                <a href="login.html" class="btn btn-secondary">Login</a>
                 <button id="rtl-toggle" class="btn btn-secondary" title="Toggle RTL/LTR" aria-label="Toggle RTL/LTR">
                     <span style="font-size: 0.75rem; font-weight: 700;">RTL</span>
                 </button>
@@ -323,23 +324,6 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
-
-        // 3D card tilt
-        const card = document.getElementById('contactCard');
-        if (card) {
-            const wrapper = card.parentElement;
-            wrapper.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const rotateX = ((e.clientY - rect.top  - rect.height / 2) / (rect.height / 2)) * -8;
-                const rotateY = ((e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2)) *  8;
-                card.classList.remove('reset');
-                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-            wrapper.addEventListener('mouseleave', () => {
-                card.classList.add('reset');
-                card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-            });
-        }
     </script>
 </body>
 
